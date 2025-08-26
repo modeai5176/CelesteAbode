@@ -30,17 +30,17 @@ export function HeroSection() {
         quality={85}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/40" />
 
       {/* Content */}
       <div
         className={`relative z-10 max-w-4xl mx-auto px-6 text-center text-white transition-all duration-1000 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
       >
         <h1 className="text-5xl md:text-7xl font-semibold tracking-tight leading-tight mb-6">
-          From Masterpiece of Time into a <span className="text-secondary">Masterpiece of Living</span>
+          From Masterpiece of Time into a <span className="text-secondary font-bold">Masterpiece of Living</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-white mb-12 max-w-2xl mx-auto leading-relaxed">
           Redefining luxury real estate consulting in India's premium segment
         </p>
 

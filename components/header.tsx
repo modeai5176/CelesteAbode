@@ -29,7 +29,7 @@ export function Header() {
         "fixed top-0 left-0 right-0 z-50 px-4 py-4 transition-all duration-300",
         isHomePage && !isScrolled 
           ? "bg-transparent" 
-          : "bg-white/95 backdrop-blur-xl border-b border-white/20 shadow-lg"
+          : "bg-white/95 backdrop-blur-xl shadow-lg"
       )}>
         <div className="flex items-center justify-between max-w-7xl mx-auto">
           {/* Logo Section - Left aligned */}
@@ -49,10 +49,10 @@ export function Header() {
           <div className="hidden md:flex items-center justify-center flex-1">
             <nav
               className={cn(
-                "flex items-center gap-6 lg:gap-8 px-6 lg:px-8 py-4 lg:py-5 rounded-full backdrop-blur-xl transition-all duration-300 hover:shadow-xl",
+                "flex items-center gap-6 lg:gap-8 px-6 lg:px-8 py-4 lg:py-5 rounded-full backdrop-blur-xl transition-all duration-300 hover:shadow-xl border border-black",
                 isHomePage && !isScrolled 
-                  ? "bg-white/10 border border-white/20 backdrop-blur-md" 
-                  : "bg-white/95 shadow-xl border border-white/40 backdrop-blur-xl",
+                  ? "bg-white/10 border-white/20" 
+                  : "bg-white/95"
               )}
             >
               <Link
