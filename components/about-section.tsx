@@ -10,6 +10,10 @@ export function AboutSection() {
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
+  const handleNavigation = (path: string) => {
+    window.location.href = path
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -49,7 +53,7 @@ export function AboutSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="premium-button"
-                onClick={() => window.location.href = '/philosophy'}
+                onClick={() => handleNavigation('/philosophy')}
               >
                 Learn More
               </Button>

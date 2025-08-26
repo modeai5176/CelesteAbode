@@ -16,6 +16,10 @@ export default function PropertiesPage() {
   const [selectedProperty, setSelectedProperty] = useState<{ title: string; location: string } | null>(null)
   const filters = ["All", "Apartments", "Villas", "Plots"]
 
+  const handleFilterChange = (filter: string) => {
+    setActiveFilter(filter)
+  }
+
   const properties = [
     {
       id: 1,
@@ -121,7 +125,7 @@ export default function PropertiesPage() {
                   className={
                     activeFilter === filter ? "pill-button bg-secondary hover:bg-secondary/90 text-white" : "pill-button"
                   }
-                  onClick={() => setActiveFilter(filter)}
+                  onClick={() => handleFilterChange(filter)}
                 >
                   {filter}
                 </Button>

@@ -39,6 +39,10 @@ export function PropertiesSection() {
   const [selectedProperty, setSelectedProperty] = useState<{ title: string; location: string } | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
+  const handleNavigation = (path: string) => {
+    window.location.href = path
+  }
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -139,7 +143,7 @@ export function PropertiesSection() {
           <Button
             variant="outline"
             className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-transparent"
-            onClick={() => window.location.href = '/properties'}
+            onClick={() => handleNavigation('/properties')}
           >
             View All Properties
           </Button>

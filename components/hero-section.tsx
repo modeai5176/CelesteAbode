@@ -13,6 +13,10 @@ export function HeroSection() {
     setIsVisible(true)
   }, [])
 
+  const handleNavigation = (path: string) => {
+    window.location.href = path
+  }
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -43,7 +47,7 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
             className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            onClick={() => window.location.href = '/properties'}
+            onClick={() => handleNavigation('/properties')}
           >
             Explore Properties
           </Button>

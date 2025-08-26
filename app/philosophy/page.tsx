@@ -1,3 +1,5 @@
+"use client"
+
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +7,10 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Target, Eye, Users, Award, Shield, Lightbulb } from "lucide-react"
 
 export default function PhilosophyPage() {
+  const handleNavigation = (path: string) => {
+    window.location.href = path
+  }
+
   const coreValues = [
     {
       icon: Target,
@@ -72,7 +78,7 @@ export default function PhilosophyPage() {
                 </p>
                 <Button 
                   className="pill-button bg-secondary hover:bg-secondary/90 text-white"
-                  onClick={() => window.location.href = '/properties'}
+                  onClick={() => handleNavigation('/properties')}
                 >
                   Learn More
                 </Button>
@@ -90,7 +96,7 @@ export default function PhilosophyPage() {
                 </p>
                 <Button 
                   className="pill-button bg-secondary hover:bg-secondary/90 text-white"
-                  onClick={() => window.location.href = '/contact'}
+                  onClick={() => handleNavigation('/contact')}
                 >
                   Our Vision
                 </Button>
