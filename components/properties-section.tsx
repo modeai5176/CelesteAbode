@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ContactPopup } from "@/components/contact-popup"
@@ -78,10 +79,15 @@ export function PropertiesSection() {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="relative overflow-hidden">
-                <img
+                <Image
                   src={property.image || "/placeholder.svg"}
                   alt={`${property.type} in ${property.location}`}
+                  width={400}
+                  height={256}
                   className="w-full h-64 object-cover rounded-t-xl group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  quality={85}
+                  loading="lazy"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="bg-secondary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">

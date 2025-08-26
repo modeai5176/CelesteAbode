@@ -43,8 +43,8 @@ export function Header() {
             </Link>
           </div>
 
-          {/* Desktop Navigation and Book Consultation Button */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center justify-center flex-1">
             <nav
               className={cn(
                 "flex items-center gap-6 lg:gap-8 px-6 lg:px-8 py-4 lg:py-5 rounded-full backdrop-blur-xl transition-all duration-300 hover:shadow-xl",
@@ -99,7 +99,10 @@ export function Header() {
                 Contact
               </Link>
             </nav>
+          </div>
 
+          {/* Desktop Book Consultation Button - Right aligned */}
+          <div className="hidden md:block flex-shrink-0">
             <Button className={cn(
               "px-4 lg:px-8 py-3 lg:py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm lg:text-base",
               isHomePage && !isScrolled 

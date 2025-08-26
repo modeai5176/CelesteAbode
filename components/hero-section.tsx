@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
@@ -13,11 +14,14 @@ export function HeroSection() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
-        style={{
-          backgroundImage: `url('/hero.avif')`,
-        }}
+      <Image
+        src="/hero.avif"
+        alt="Luxury real estate background"
+        fill
+        priority
+        className="object-cover transition-transform duration-1000 hover:scale-105"
+        sizes="100vw"
+        quality={85}
       />
 
       <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/20" />

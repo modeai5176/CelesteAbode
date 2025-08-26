@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 
@@ -58,10 +59,15 @@ export function AboutSection() {
             className={`relative transition-all duration-800 delay-200 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}
           >
             <div className="hover-lift">
-              <img
+              <Image
                 src="/modern-luxury-apartment-building-architectural-pho.png"
                 alt="Luxury apartment building"
+                width={600}
+                height={400}
                 className="rounded-3xl shadow-2xl w-full h-auto"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                quality={85}
+                loading="lazy"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full opacity-20 blur-xl"></div>

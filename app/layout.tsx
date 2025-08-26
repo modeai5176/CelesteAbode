@@ -23,6 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          href="/hero.avif"
+          as="image"
+          type="image/avif"
+        />
+      </head>
       <body className={`font-sans ${inter.variable} antialiased`}>{children}</body>
     </html>
   )

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
@@ -95,10 +96,15 @@ export default function ReviewsPage() {
                 <Card key={testimonial.id} className="border-0 bg-card/50 hover:bg-card transition-colors">
                   <CardContent className="p-8">
                     <div className="flex items-start gap-4 mb-6">
-                      <img
+                      <Image
                         src={testimonial.image || "/placeholder.svg"}
                         alt={testimonial.name}
+                        width={64}
+                        height={64}
                         className="w-16 h-16 rounded-2xl object-cover"
+                        sizes="64px"
+                        quality={85}
+                        loading="lazy"
                       />
                       <div className="flex-1">
                         <h3 className="text-lg font-semibold text-foreground">{testimonial.name}</h3>

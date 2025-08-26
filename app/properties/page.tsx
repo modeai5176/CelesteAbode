@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
@@ -139,10 +140,15 @@ export default function PropertiesPage() {
                   className="border-0 bg-card overflow-hidden hover:shadow-lg transition-shadow group"
                 >
                   <div className="relative">
-                    <img
+                    <Image
                       src={property.image || "/placeholder.svg"}
                       alt={property.title}
+                      width={400}
+                      height={256}
                       className="w-full h-64 object-cover rounded-t-xl group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      quality={85}
+                      loading="lazy"
                     />
                     {property.featured && (
                       <Badge className="absolute top-4 left-4 bg-secondary text-white">Featured</Badge>
