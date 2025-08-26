@@ -4,12 +4,14 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
+import { ContactPopup } from "@/components/contact-popup"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
   const pathname = usePathname()
   const isHomePage = pathname === "/"
 
@@ -103,12 +105,15 @@ export function Header() {
 
           {/* Desktop Book Consultation Button - Right aligned */}
           <div className="hidden md:block flex-shrink-0">
-            <Button className={cn(
-              "px-4 lg:px-8 py-3 lg:py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm lg:text-base",
-              isHomePage && !isScrolled 
-                ? "bg-secondary hover:bg-secondary/90 text-white" 
-                : "bg-primary hover:bg-primary/90 text-white"
-            )}>
+            <Button 
+              className={cn(
+                "px-4 lg:px-8 py-3 lg:py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm lg:text-base",
+                isHomePage && !isScrolled 
+                  ? "bg-secondary hover:bg-secondary/90 text-white" 
+                  : "bg-primary hover:bg-primary/90 text-white"
+              )}
+              onClick={() => setIsPopupOpen(true)}
+            >
               Book Consultation
             </Button>
           </div>
@@ -196,7 +201,13 @@ export function Header() {
 
               {/* Book Consultation Button */}
               <div className="mt-8 pt-6 border-t border-border">
-                <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-4 rounded-xl font-medium text-lg shadow-lg">
+                <Button 
+                  className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white py-4 rounded-xl font-medium text-lg shadow-lg"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false)
+                    setIsPopupOpen(true)
+                  }}
+                >
                   Book Consultation
                 </Button>
               </div>
@@ -204,6 +215,14 @@ export function Header() {
           </div>
         </div>
       )}
+
+      {/* Contact Popup */}
+      <ContactPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        propertyTitle="General Consultation"
+        propertyLocation="Noida, India"
+      />
     </>
   )
 }

@@ -2,10 +2,12 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { ContactPopup } from "@/components/contact-popup"
 import { useEffect, useRef, useState } from "react"
 
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -45,10 +47,16 @@ export function AboutSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="premium-button">Learn More</Button>
+              <Button 
+                className="premium-button"
+                onClick={() => window.location.href = '/philosophy'}
+              >
+                Learn More
+              </Button>
               <Button
                 variant="outline"
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-transparent"
+                onClick={() => setIsPopupOpen(true)}
               >
                 Our Story
               </Button>
@@ -74,6 +82,14 @@ export function AboutSection() {
           </div>
         </div>
       </div>
+
+      {/* Contact Popup */}
+      <ContactPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        propertyTitle="About Celeste Abode"
+        propertyLocation="Noida, India"
+      />
     </section>
   )
 }

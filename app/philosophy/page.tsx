@@ -70,7 +70,12 @@ export default function PhilosophyPage() {
                   create tailored portfolios that exceed expectations. Our approach combines market expertise with
                   personalized service to deliver exceptional results.
                 </p>
-                <Button className="pill-button bg-secondary hover:bg-secondary/90 text-white">Learn More</Button>
+                <Button 
+                  className="pill-button bg-secondary hover:bg-secondary/90 text-white"
+                  onClick={() => window.location.href = '/properties'}
+                >
+                  Learn More
+                </Button>
               </div>
 
               <div className="space-y-6">
@@ -83,7 +88,12 @@ export default function PhilosophyPage() {
                   future where every property transaction creates lasting value and transforms lives through exceptional
                   spaces and experiences.
                 </p>
-                <Button className="pill-button bg-secondary hover:bg-secondary/90 text-white">Our Vision</Button>
+                <Button 
+                  className="pill-button bg-secondary hover:bg-secondary/90 text-white"
+                  onClick={() => window.location.href = '/contact'}
+                >
+                  Our Vision
+                </Button>
               </div>
             </div>
           </div>

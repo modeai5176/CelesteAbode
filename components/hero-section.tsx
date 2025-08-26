@@ -2,10 +2,12 @@
 
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
+import { ContactPopup } from "@/components/contact-popup"
 import { useEffect, useState } from "react"
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isPopupOpen, setIsPopupOpen] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
@@ -39,15 +41,29 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">Explore Properties</Button>
+          <Button 
+            className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => window.location.href = '/properties'}
+          >
+            Explore Properties
+          </Button>
           <Button
             variant="outline"
             className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 bg-transparent rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => setIsPopupOpen(true)}
           >
             Book Consultation
           </Button>
         </div>
       </div>
+
+      {/* Contact Popup */}
+      <ContactPopup
+        isOpen={isPopupOpen}
+        onClose={() => setIsPopupOpen(false)}
+        propertyTitle="General Consultation"
+        propertyLocation="Noida, India"
+      />
     </section>
   )
 }
