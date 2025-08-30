@@ -17,6 +17,10 @@ export function HeroSection() {
     window.location.href = path
   }
 
+  const handleContact = () => {
+    setIsPopupOpen(true)
+  }
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -46,18 +50,17 @@ export function HeroSection() {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button 
-            className="bg-secondary hover:bg-secondary/90 text-white text-lg px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            className="premium-button"
             onClick={() => handleNavigation('/properties')}
           >
             Explore Properties
           </Button>
-          <Button
-            variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4 bg-transparent rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            onClick={() => setIsPopupOpen(true)}
-          >
-            Book Consultation
-          </Button>
+                      <Button 
+              className="border-2 border-white text-primary bg-white hover:bg-white/90 hover:text-black text-lg px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              onClick={handleContact}
+            >
+              Get Started
+            </Button>
         </div>
       </div>
 

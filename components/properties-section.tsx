@@ -3,150 +3,183 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 import { ContactPopup } from "@/components/contact-popup"
 import { useEffect, useRef, useState } from "react"
+import { MapPin, Play, ChevronLeft, ChevronRight } from "lucide-react"
 
 const properties = [
   {
-    image: "/luxury-villa-exterior-modern-architecture.png",
-    price: "₹2.5 Cr",
-    location: "Sector 50, Noida",
-    specs: "4 BHK Villa • 3,200 sq ft",
-    type: "Villa",
-    features: ["Private Garden", "Swimming Pool", "Premium Finishes"],
+    id: 1,
+    name: "FOREST WALK VILLAS",
+    builder: "Renowned Group",
+    address: "GDA Approved Location",
+    image: "/ForestWalk/LandingpageVILLA.jpeg",
+    status: "Pre-Launch Offer"
   },
   {
-    image: "/premium-apartment-interior-living-room.png",
-    price: "₹1.8 Cr",
-    location: "Sector 137, Noida",
-    specs: "3 BHK Apartment • 2,100 sq ft",
-    type: "Apartment",
-    features: ["City Views", "Modern Amenities", "Prime Location"],
+    id: 2,
+    name: "IVORY COUNTY",
+    builder: "County Group",
+    address: "Sector 115, Noida",
+    image: "/IvoryCounty/SocietyTowersView.png",
+    status: "Under Construction"
   },
   {
-    image: "/residential-plot-with-landscaping.png",
-    price: "₹85 Lakh",
-    location: "Sector 168, Noida",
-    specs: "Residential Plot • 200 sq yards",
-    type: "Plot",
-    features: ["Corner Plot", "Approved Layout", "Investment Ready"],
+    id: 3,
+    name: "ESTATE 360",
+    builder: "MAX ESTATES GROUP",
+    address: "36A, Dwarka Expressway, Gurgaon",
+    image: "/ESTATE360/DroneViewTowers.png",
+    status: "Under Construction"
   },
+  {
+    id: 4,
+    name: "CRC MAESTA",
+    builder: "CRC Group",
+    address: "Sector 1, Greater Noida West",
+    image: "/CRCMaesta/TOWERVIEW.png",
+    status: "Under Construction"
+  }
 ]
 
 export function PropertiesSection() {
-  const [visibleCards, setVisibleCards] = useState<number[]>([])
+  const [api, setApi] = useState<any>()
+  const [current, setCurrent] = useState(0)
   const [isPopupOpen, setIsPopupOpen] = useState(false)
   const [selectedProperty, setSelectedProperty] = useState<{ title: string; location: string } | null>(null)
-  const sectionRef = useRef<HTMLElement>(null)
 
   const handleNavigation = (path: string) => {
     window.location.href = path
   }
 
+  const handleContact = (property: any) => {
+    setSelectedProperty({
+      title: property.name,
+      location: property.address
+    })
+    setIsPopupOpen(true)
+  }
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardIndex = Number.parseInt(entry.target.getAttribute("data-index") || "0")
-            setVisibleCards((prev) => [...prev, cardIndex])
-          }
-        })
-      },
-      { threshold: 0.1 },
-    )
+    if (!api) {
+      return
+    }
 
-    const cards = sectionRef.current?.querySelectorAll("[data-index]")
-    cards?.forEach((card) => observer.observe(card))
-
-    return () => observer.disconnect()
-  }, [])
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap())
+    })
+  }, [api])
 
   return (
-    <section ref={sectionRef} id="properties" className="py-24 bg-background">
+    <section id="properties" className="py-20 bg-gradient-to-br from-background to-primary/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-primary mb-6">Featured Properties</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Handpicked premium homes that represent the pinnacle of luxury living and architectural excellence
+          <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+            Premium Projects
+          </div>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-primary mb-4">
+            Featured Luxury Properties
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Discover our handpicked collection of premium real estate projects that redefine luxury living
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {properties.map((property, index) => (
-            <Card
-              key={index}
-              data-index={index}
-              className={`premium-card hover-lift overflow-hidden group transition-all duration-500 ${
-                visibleCards.includes(index) ? "animate-fade-in-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <div className="relative overflow-hidden">
-                <Image
-                  src={property.image || "/placeholder.svg"}
-                  alt={`${property.type} in ${property.location}`}
-                  width={400}
-                  height={256}
-                  className="w-full h-64 object-cover rounded-t-xl group-hover:scale-110 transition-transform duration-500"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  quality={85}
-                  loading="lazy"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="bg-secondary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                    {property.type}
-                  </span>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-
-              <CardContent className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-2xl font-bold text-primary">{property.price}</h3>
-                </div>
-
-                <p className="text-card-foreground font-semibold mb-2">{property.location}</p>
-                <p className="text-muted-foreground mb-4">{property.specs}</p>
-
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
-                    {property.features.map((feature, idx) => (
-                      <span
-                        key={idx}
-                        className="text-xs bg-card border border-border px-2 py-1 rounded-full text-muted-foreground"
-                      >
-                        {feature}
-                      </span>
-                    ))}
+        {/* Properties Carousel */}
+        <div className="mb-12">
+          <Carousel
+            setApi={setApi}
+            className="w-full max-w-5xl mx-auto relative"
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {properties.map((property, index) => (
+                <CarouselItem key={property.id} className="md:basis-1/2 lg:basis-1/2">
+                  <div className="group cursor-pointer p-4" onClick={() => handleNavigation(`/properties/${property.id}`)}>
+                    <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
+                      {/* Image */}
+                      <Image
+                        src={property.image}
+                        alt={property.name}
+                        width={450}
+                        height={450}
+                        className="w-full aspect-square object-cover rounded-2xl"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                        quality={90}
+                        loading="lazy"
+                      />
+                      
+                      {/* Darker Overlay for Better Text Visibility */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 rounded-2xl"></div>
+                      
+                      {/* Status Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-secondary text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                          {property.status}
+                        </span>
+                      </div>
+                      
+                      {/* Text Overlay - Bottom Left */}
+                      <div className="absolute bottom-4 left-4 right-4 text-white">
+                        <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">{property.name}</h3>
+                        <p className="text-base opacity-95 mb-2 drop-shadow-lg">{property.builder}</p>
+                        <div className="flex items-center gap-2 text-sm opacity-90">
+                          <MapPin className="w-4 h-4" />
+                          <span className="drop-shadow-lg">{property.address}</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                <Button 
-                  className="premium-button w-full"
-                  onClick={() => {
-                    setSelectedProperty({
-                      title: `${property.type} in ${property.location}`,
-                      location: property.location
-                    })
-                    setIsPopupOpen(true)
-                  }}
-                >
-                  Schedule Viewing
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            
+            {/* Navigation Arrows - Left and Right Sides */}
+            <div className="absolute -left-16 top-1/2 transform -translate-y-1/2">
+              <CarouselPrevious className="relative translate-y-0 left-0 right-0 bg-white hover:bg-gray-50 border-2 border-primary text-primary hover:text-primary shadow-lg w-12 h-12" />
+            </div>
+            <div className="absolute -right-16 top-1/2 transform -translate-y-1/2">
+              <CarouselNext className="relative translate-y-0 left-0 right-0 bg-white hover:bg-gray/50 border-2 border-primary text-primary hover:text-primary shadow-lg w-12 h-12" />
+            </div>
+          </Carousel>
+          
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 gap-2">
+            {properties.map((_, index) => (
+              <button
+                key={index}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  index === current ? "bg-secondary w-8" : "bg-gray-300"
+                }`}
+                onClick={() => api?.scrollTo(index)}
+              />
+            ))}
+          </div>
         </div>
 
-        <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 bg-transparent"
-            onClick={() => handleNavigation('/properties')}
-          >
-            View All Properties
-          </Button>
+        {/* CTA Buttons */}
+        <div className="text-center">
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button
+              size="lg"
+              className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 text-lg rounded-full"
+              onClick={() => handleNavigation('/properties')}
+            >
+              Explore All Projects
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg rounded-full"
+              onClick={() => handleContact(properties[0])}
+            >
+              Get Expert Consultation
+            </Button>
+          </div>
         </div>
       </div>
 
