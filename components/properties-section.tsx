@@ -72,13 +72,13 @@ export function PropertiesSection() {
   }, [api])
 
   return (
-    <section id="properties" className="py-20 bg-gradient-to-br from-background to-primary/5">
+    <section id="properties" className="pt-24 pb-20 bg-gradient-to-br from-background to-primary/5">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
             Premium Projects
           </div>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-primary mb-4">
             Featured Luxury Properties
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export function PropertiesSection() {
                       
                       {/* Text Overlay - Bottom Left */}
                       <div className="absolute bottom-4 left-4 right-4 text-white">
-                        <h3 className="text-2xl font-bold mb-2 drop-shadow-lg">{property.name}</h3>
+                        <h3 className="text-2xl font-semibold mb-2 drop-shadow-lg">{property.name}</h3>
                         <p className="text-base opacity-95 mb-2 drop-shadow-lg">{property.builder}</p>
                         <div className="flex items-center gap-2 text-sm opacity-90">
                           <MapPin className="w-4 h-4" />

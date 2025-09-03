@@ -202,7 +202,7 @@ export default function CRCMaestaPage() {
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <div className="max-w-6xl mx-auto">
               <Badge className="bg-secondary text-white mb-4">Under Construction</Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">CRC MAESTA</h1>
+              <h1 className="text-4xl md:text-6xl font-semibold mb-4">CRC MAESTA</h1>
               <p className="text-xl md:text-2xl mb-6">Your Picture Perfect Moments</p>
               <div className="flex flex-wrap gap-4">
                 <Button 
@@ -287,7 +287,7 @@ export default function CRCMaestaPage() {
           {activeTab === "overview" && (
             <div className="space-y-12">
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">
                   About CRC
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -346,7 +346,7 @@ export default function CRCMaestaPage() {
           {/* Gallery Tab */}
           {activeTab === "gallery" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Project Gallery
               </h2>
               
@@ -379,7 +379,7 @@ export default function CRCMaestaPage() {
           {/* Amenities Tab */}
           {activeTab === "amenities" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Nature & Wellness
               </h2>
               
@@ -449,7 +449,7 @@ export default function CRCMaestaPage() {
           {/* Residences Tab */}
           {activeTab === "residences" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Residences at CRC Maesta
               </h2>
               
@@ -469,11 +469,11 @@ export default function CRCMaestaPage() {
                       <div className="space-y-3">
                         <div className="p-3 bg-secondary/5 rounded-lg">
                           <p className="text-sm text-muted-foreground">Carpet Area</p>
-                          <p className="text-lg font-bold text-secondary">{tower.carpet}</p>
+                          <p className="text-lg font-semibold text-secondary">{tower.carpet}</p>
                         </div>
                         <div className="p-3 bg-primary/5 rounded-lg">
                           <p className="text-sm text-muted-foreground">Built-up Area</p>
-                          <p className="text-lg font-bold text-primary">{tower.builtUp}</p>
+                          <p className="text-lg font-semibold text-primary">{tower.builtUp}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -486,7 +486,7 @@ export default function CRCMaestaPage() {
           {/* Specifications Tab */}
           {activeTab === "specifications" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Specifications
               </h2>
               
@@ -513,7 +513,7 @@ export default function CRCMaestaPage() {
           {/* Location Tab */}
           {activeTab === "location" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Prime Location – Noida's Most Coveted Neighbourhood
               </h2>
               
@@ -579,7 +579,7 @@ export default function CRCMaestaPage() {
           {/* Developer Tab */}
           {activeTab === "developer" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Our Team of Experts
               </h2>
               
@@ -642,7 +642,7 @@ export default function CRCMaestaPage() {
         {/* CTA Section */}
         <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
           <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
               Ready to Create Your Picture Perfect Moments?
             </h2>
             <p className="text-xl mb-8 opacity-90">

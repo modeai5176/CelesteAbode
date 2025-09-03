@@ -1,134 +1,121 @@
-import Image from "next/image"
+import { Section } from "@/components/ui/section"
+import { Card, CardContent } from "@/components/ui/card"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Card, CardContent } from "@/components/ui/card"
-import { Star, Quote } from "lucide-react"
+import { Star } from "lucide-react"
 
 export default function ReviewsPage() {
   const testimonials = [
     {
-      id: 1,
-      name: "Rajesh Sharma",
+      name: "Rajesh Kumar",
       role: "Business Owner",
-      image: "/indian-businessman-portrait.png",
       rating: 5,
-      review:
-        "Celeste Abode transformed our property search experience completely. Their attention to detail and understanding of our requirements was exceptional. The team guided us through every step, making what seemed like a daunting process incredibly smooth. We found our dream home within weeks, and the after-sales service has been outstanding.",
-      property: "Garden Villa Estate, Sector 150",
+      content: "Celeste Abode transformed our property search experience completely. Their team's understanding of our lifestyle requirements and investment goals was exceptional. They didn't just show us properties; they presented us with opportunities that perfectly aligned with our vision. The level of personalization and attention to detail was beyond anything we've experienced before."
     },
     {
-      id: 2,
-      name: "Priya Mehta",
-      role: "Investment Consultant",
-      image: "/indian-businesswoman-portrait.png",
+      name: "Priya Sharma",
+      role: "NRI Investor",
       rating: 5,
-      review:
-        "As an investment consultant, I've worked with many real estate firms, but Celeste Abode stands apart. Their market analysis is thorough, their recommendations are spot-on, and they truly understand the luxury segment. The ROI on my property investment has exceeded expectations, thanks to their strategic guidance.",
-      property: "Metropolitan Heights, Sector 76",
+      content: "As an NRI, I was concerned about managing property investments from abroad. Celeste Abode made the entire process seamless and transparent. Their technology-driven approach combined with human expertise gave me confidence in every decision. They truly understand the unique challenges faced by international investors."
     },
     {
-      id: 3,
-      name: "Amit Gupta",
-      role: "Tech Entrepreneur",
-      image: "/young-indian-tech-entrepreneur-portrait.png",
+      name: "Amit Patel",
+      role: "Tech Professional",
       rating: 5,
-      review:
-        "The level of professionalism and expertise at Celeste Abode is unmatched. They didn't just sell us a property; they helped us find a home that perfectly aligns with our lifestyle and future plans. The technology integration in their process made everything transparent and efficient. Highly recommended for anyone seeking premium real estate solutions.",
-      property: "Skyline Residences, Sector 62",
+      content: "What impressed me most was their data-driven approach to property selection. They didn't rely on gut feelings; every recommendation was backed by comprehensive market analysis and future projections. Their insights helped me make informed decisions that have already started showing returns."
     },
     {
-      id: 4,
-      name: "Sunita Agarwal",
-      role: "Interior Designer",
-      image: "/elegant-indian-woman-interior-designer-portrait.png",
+      name: "Sunita Verma",
+      role: "Luxury Home Seeker",
       rating: 5,
-      review:
-        "Working with Celeste Abode was a delightful experience. Their team understood my vision for the perfect workspace-home combination. They presented options that I hadn't even considered, each better than the last. The negotiation process was handled with such finesse, and we closed the deal at a fantastic price.",
-      property: "Urban Oasis, Sector 93",
+      content: "Finding the perfect luxury property was a dream come true with Celeste Abode. Their curated portfolio featured only the finest developments, and their understanding of luxury living standards was impeccable. They didn't just sell us a property; they helped us find our dream lifestyle."
     },
     {
-      id: 5,
       name: "Vikram Singh",
-      role: "Corporate Executive",
-      image: "/senior-indian-corporate-executive-portrait.png",
+      role: "Real Estate Investor",
       rating: 5,
-      review:
-        "Celeste Abode's commitment to excellence is evident in every interaction. From the initial consultation to the final handover, every detail was meticulously managed. Their market insights helped us make an informed decision, and the property has appreciated significantly since our purchase. They've earned a client for life.",
-      property: "Royal Manor, Sector 168",
+      content: "The exclusive access to premium projects before public launch was a game-changer. We got the best units and pricing because of their strong relationships with leading developers. Their market intelligence and insider knowledge gave us a significant advantage in the market."
     },
     {
-      id: 6,
-      name: "Neha Kapoor",
-      role: "Marketing Director",
-      image: "/confident-indian-marketing-professional-portrait.png",
+      name: "Meera Reddy",
+      role: "Family Home Buyer",
       rating: 5,
-      review:
-        "The personalized approach of Celeste Abode is what sets them apart. They took time to understand our family's needs, our budget constraints, and our long-term goals. The result was a perfect match that we couldn't have found on our own. Their post-purchase support has been exceptional, making us feel valued as clients.",
-      property: "Premium Plot, Sector 137",
-    },
+      content: "Celeste Abode's end-to-end support made our property acquisition journey stress-free and enjoyable. From initial consultation to final possession, every step was handled with professionalism and care. They truly care about their clients' long-term satisfaction."
+    }
   ]
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
-      <main className="pt-24">
-        {/* Hero Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-6">
-              Client Testimonials
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              What Our <span className="text-secondary">Clients Say</span>
+      <main>
+        {/* Hero */}
+        <Section className="pt-32">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-primary mb-6">
+              What Our Clients Say
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real experiences from satisfied clients who found their perfect properties with us.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Real experiences from real clients who have transformed their lives through our services
             </p>
           </div>
-        </section>
+        </Section>
 
-        {/* Testimonials Grid */}
-        <section className="pb-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonials.map((testimonial) => (
-                <Card key={testimonial.id} className="border-0 bg-card/50 hover:bg-card transition-colors">
+        {/* Testimonials */}
+        <Section>
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
                   <CardContent className="p-8">
-                    <div className="flex items-start gap-4 mb-6">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        width={64}
-                        height={64}
-                        className="w-16 h-16 rounded-2xl object-cover"
-                        sizes="64px"
-                        quality={85}
-                        loading="lazy"
-                      />
-                      <div className="flex-1">
-                        <h3 className="text-lg font-semibold text-foreground">{testimonial.name}</h3>
-                        <p className="text-sm text-muted-foreground mb-2">{testimonial.role}</p>
-                        <div className="flex items-center gap-1">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                          ))}
-                        </div>
-                      </div>
-                      <Quote className="w-8 h-8 text-secondary/20" />
+                    {/* Rating */}
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                      ))}
                     </div>
-
-                    <p className="text-muted-foreground leading-relaxed mb-4">"{testimonial.review}"</p>
-
-                    <div className="text-sm text-secondary font-medium">Property: {testimonial.property}</div>
+                    
+                    {/* Content */}
+                    <blockquote className="text-muted-foreground leading-relaxed mb-6 italic">
+                      "{testimonial.content}"
+                    </blockquote>
+                    
+                    {/* Author */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                        <span className="text-lg font-semibold text-primary">
+                          {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-foreground">{testimonial.name}</div>
+                        <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
             </div>
           </div>
-        </section>
-      </main>
+        </Section>
 
+        {/* CTA */}
+        <Section className="bg-muted/30">
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold text-primary mb-4">
+              Ready to Join Our Happy Clients?
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Experience the Celeste Abode difference for yourself
+            </p>
+            <a 
+              href="/contact" 
+              className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full font-medium transition-colors"
+            >
+              Get Started Today
+            </a>
+          </div>
+        </Section>
+      </main>
       <Footer />
     </div>
   )

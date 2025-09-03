@@ -78,7 +78,7 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                 <Calendar className="w-6 h-6 text-white" />
               </div>
               <div>
-                <CardTitle className="text-2xl font-bold text-primary">
+                <CardTitle className="text-2xl font-semibold text-primary">
                   Schedule Property Viewing
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">Book your personalized tour</p>

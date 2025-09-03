@@ -119,14 +119,14 @@ export default function PropertiesPage() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-24">
+      <main>
         {/* Hero Section */}
-        <section className="py-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
-          <div className="max-w-6xl mx-auto text-center">
+        <section className="pt-0 pb-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
+          <div className="max-w-6xl mx-auto text-center pt-32">
             <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
               Properties
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
               Explore <span className="text-secondary">Premium Properties</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -202,7 +202,7 @@ export default function PropertiesPage() {
                     <p className="text-secondary font-medium text-sm mb-3 line-clamp-1">{property.subtitle}</p>
                     
                     {property.price !== "Contact for Pricing" && (
-                      <p className="text-xl font-bold text-secondary mb-3">
+                      <p className="text-xl font-semibold text-secondary mb-3">
                         {property.price}
                       </p>
                     )}

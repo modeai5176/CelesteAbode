@@ -73,7 +73,7 @@ export default function ForestWalkPage() {
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <div className="max-w-6xl mx-auto">
               <Badge className="bg-secondary text-white mb-4">Pre-Launch Offer</Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">FOREST WALK VILLAS</h1>
+              <h1 className="text-4xl md:text-6xl font-semibold mb-4">FOREST WALK VILLAS</h1>
               <p className="text-xl md:text-2xl mb-6">Phase 2 - Luxury Forest Living</p>
               <div className="flex flex-wrap gap-4">
                 <Button 
@@ -156,7 +156,7 @@ export default function ForestWalkPage() {
           {activeTab === "overview" && (
             <div className="space-y-12">
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">
                   Why Choose Forest Walk?
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -202,7 +202,7 @@ export default function ForestWalkPage() {
                     {pricing.map((price, index) => (
                       <div key={index} className="text-center p-6 border rounded-lg">
                         <p className="text-sm text-muted-foreground mb-2">{price.type}</p>
-                        <div className="text-3xl font-bold text-secondary mb-1">{price.amount}</div>
+                        <div className="text-3xl font-semibold text-secondary mb-1">{price.amount}</div>
                         <p className="text-sm text-muted-foreground mb-2">{price.unit}</p>
                         <p className="text-xs text-secondary font-medium">{price.note}</p>
                       </div>
@@ -231,7 +231,7 @@ export default function ForestWalkPage() {
           {/* Gallery Tab */}
           {activeTab === "gallery" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Project Gallery
               </h2>
               
@@ -294,7 +294,7 @@ export default function ForestWalkPage() {
           {/* Videos Tab */}
           {activeTab === "videos" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Project Videos
               </h2>
               
@@ -356,7 +356,7 @@ export default function ForestWalkPage() {
           {/* Specifications Tab */}
           {activeTab === "specifications" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Project Specifications
               </h2>
               
@@ -427,7 +427,7 @@ export default function ForestWalkPage() {
           {/* Location Tab */}
           {activeTab === "location" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Location & Connectivity
               </h2>
               
@@ -480,7 +480,7 @@ export default function ForestWalkPage() {
         {/* CTA Section */}
         <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
           <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
               Ready to Own Your Dream Villa?
             </h2>
             <p className="text-xl mb-8 opacity-90">

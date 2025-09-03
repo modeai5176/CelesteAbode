@@ -126,7 +126,7 @@ export default function IvoryCountyPage() {
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <div className="max-w-6xl mx-auto">
               <Badge className="bg-secondary text-white mb-4">Under Construction</Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">IVORY COUNTY</h1>
+              <h1 className="text-4xl md:text-6xl font-semibold mb-4">IVORY COUNTY</h1>
               <p className="text-xl md:text-2xl mb-6">Premium Living in Sector 115, Noida</p>
               <div className="flex flex-wrap gap-4">
                 <Button 
@@ -210,7 +210,7 @@ export default function IvoryCountyPage() {
           {activeTab === "overview" && (
             <div className="space-y-12">
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">
                   Welcome to Ivory County
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -279,7 +279,7 @@ export default function IvoryCountyPage() {
           {/* Gallery Tab */}
           {activeTab === "gallery" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Project Gallery
               </h2>
               
@@ -312,7 +312,7 @@ export default function IvoryCountyPage() {
           {/* Amenities Tab */}
           {activeTab === "amenities" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Amenities & Lifestyle
               </h2>
               
@@ -360,7 +360,7 @@ export default function IvoryCountyPage() {
           {/* Specifications Tab */}
           {activeTab === "specifications" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Construction & Specifications
               </h2>
               
@@ -387,7 +387,7 @@ export default function IvoryCountyPage() {
           {/* Location Tab */}
           {activeTab === "location" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Location Advantage
               </h2>
               
@@ -456,7 +456,7 @@ export default function IvoryCountyPage() {
           {/* Developer Tab */}
           {activeTab === "developer" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Developer – County Group
               </h2>
               
@@ -522,7 +522,7 @@ export default function IvoryCountyPage() {
         {/* CTA Section */}
         <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
           <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
               Ready to Experience Luxury Living?
             </h2>
             <p className="text-xl mb-8 opacity-90">

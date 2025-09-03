@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 /* Sophisticated luxury color palette with elegant blues and neutral tones */
 :root {
   --background: #fafbfc;
@@ -80,7 +83,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -126,15 +129,123 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  /* Typography System */
+  html {
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+  
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Heading Typography */
+  h1, .h1 {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  
+  h2, .h2 {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 3vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  
+  h3, .h3, h4, .h4 {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: clamp(20px, 2.5vw, 24px);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+  
+  /* Body Text */
+  p, .body-text {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(16px, 1.1vw, 18px);
+    line-height: 1.6;
+    max-width: 68ch;
+    text-wrap: pretty;
+  }
+  
+  /* Navigation & Kickers */
+  .nav-text, .kicker {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  /* Quotes & Pull Quotes */
+  blockquote, .quote, .pull-quote {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  /* Numbers & Statistics */
+  .tabular-nums {
+    font-feature-settings: "tnum" 1, "lnum" 1;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  /* Lead Text */
+  .lead {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    font-size: clamp(18px, 1.3vw, 20px);
+    line-height: 1.6;
+    max-width: 72ch;
+  }
+  
+  /* UI Elements */
+  .ui-text {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+  }
+  
+  /* Button Text */
+  .button-text {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  
+  /* Vertical Rhythm */
+  .vertical-rhythm > * + * {
+    margin-top: 1.5rem; /* 24px */
+  }
+  
+  .vertical-rhythm-lg > * + * {
+    margin-top: 2rem; /* 32px */
+  }
+  
+  /* Text Balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-pretty {
+    text-wrap: pretty;
   }
 }
 
 /* Enhanced custom styles with sophisticated blue aesthetics */
-.capsule-header {
-  @apply rounded-full px-8 py-6 backdrop-blur-xl bg-white/90 shadow-lg border border-white/30 transition-all duration-300 hover:shadow-xl;
-}
 
 .glassmorphism-header {
   @apply backdrop-blur-xl bg-white/90 border-b border-white/20 shadow-lg;

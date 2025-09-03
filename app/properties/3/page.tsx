@@ -134,7 +134,7 @@ export default function Estate360Page() {
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
             <div className="max-w-6xl mx-auto">
               <Badge className="bg-secondary text-white mb-4">Under Construction</Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-4">ESTATE 360</h1>
+              <h1 className="text-4xl md:text-6xl font-semibold mb-4">ESTATE 360</h1>
               <p className="text-xl md:text-2xl mb-6">Inter-Generational Luxury Living</p>
               <div className="flex flex-wrap gap-4">
                 <Button 
@@ -217,7 +217,7 @@ export default function Estate360Page() {
           {activeTab === "overview" && (
             <div className="space-y-12">
               <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">
                   Trailblazing Features
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -260,7 +260,7 @@ export default function Estate360Page() {
                 {projectHighlights.map((highlight, index) => (
                   <Card key={index}>
                     <CardContent className="p-6 text-center">
-                      <div className="text-3xl font-bold text-secondary mb-2">{highlight.value}</div>
+                      <div className="text-3xl font-semibold text-secondary mb-2">{highlight.value}</div>
                       <h4 className="font-semibold text-primary mb-2">{highlight.feature}</h4>
                       <p className="text-sm text-muted-foreground">{highlight.description}</p>
                     </CardContent>
@@ -289,7 +289,7 @@ export default function Estate360Page() {
           {/* Gallery Tab */}
           {activeTab === "gallery" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Project Gallery
               </h2>
               
@@ -322,7 +322,7 @@ export default function Estate360Page() {
           {/* Features Tab */}
           {activeTab === "features" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Revolutionary Features
               </h2>
               
@@ -402,7 +402,7 @@ export default function Estate360Page() {
           {/* Amenities Tab */}
           {activeTab === "amenities" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Amenities for All Generations
               </h2>
               
@@ -445,7 +445,7 @@ export default function Estate360Page() {
           {/* Location Tab */}
           {activeTab === "location" && (
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary text-center mb-8">
                 Prime Location
               </h2>
               
@@ -504,7 +504,7 @@ export default function Estate360Page() {
         {/* CTA Section */}
         <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
           <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
               Ready to Experience Revolutionary Living?
             </h2>
             <p className="text-xl mb-8 opacity-90">

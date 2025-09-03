@@ -1,7 +1,12 @@
 import { HeroSection } from "@/components/hero-section"
-import { PropertiesSection } from "@/components/properties-section"
+import { BrandEssay } from "@/components/brand-essay"
+import { FoundingEthos } from "@/components/founding-ethos"
+import { WhatMakesDifferent } from "@/components/what-makes-different"
+
+import { KeyPillars } from "@/components/key-pillars"
 import { AboutSection } from "@/components/about-section"
-import { ValuesSection } from "@/components/values-section"
+import { ValuePropositions } from "@/components/value-propositions"
+import { PropertiesSection } from "@/components/properties-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CTASection } from "@/components/cta-section"
 import { Header } from "@/components/header"
@@ -13,9 +18,13 @@ export default function HomePage() {
       <Header />
       <main>
         <HeroSection />
+        <BrandEssay />
+        <ValuePropositions />
         <PropertiesSection />
+        <WhatMakesDifferent />
+        <FoundingEthos />
+        <KeyPillars />
         <AboutSection />
-        <ValuesSection />
         <TestimonialsSection />
         <CTASection />
       </main>

@@ -1,209 +1,236 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
+import { Section } from "@/components/ui/section"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    email: "",
-    message: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
-
-      <main className="pt-24">
+      <main>
         {/* Hero Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-6">
-              Contact Us
+        <section className="pt-0 pb-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
+          <div className="max-w-6xl mx-auto text-center pt-32">
+            <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+              Contact
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
               Get in <span className="text-secondary">Touch</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to find your dream property? Let's start the conversation.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Ready to start your journey towards finding your perfect property? Let's connect and discuss how we can help you achieve your real estate goals.
             </p>
           </div>
         </section>
 
         {/* Contact Form & Info */}
-        <section className="pb-20 px-4">
+        <Section>
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Form */}
-              <Card className="border-0 bg-card">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
-
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="firstName">First Name</Label>
-                        <Input
-                          id="firstName"
-                          name="firstName"
-                          value={formData.firstName}
-                          onChange={handleChange}
+              <div>
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <h2 className="text-2xl font-semibold text-primary mb-6">Send us a Message</h2>
+                    
+                    <form className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                            First Name *
+                          </label>
+                          <Input
+                            id="firstName"
+                            type="text"
+                            required
+                            placeholder="Enter your first name"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                            Last Name *
+                          </label>
+                          <Input
+                            id="lastName"
+                            type="text"
+                            required
+                            placeholder="Enter your last name"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                            Phone Number *
+                          </label>
+                          <Input
+                            id="phone"
+                            type="tel"
+                            required
+                            placeholder="Enter your phone number"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                            Email Address *
+                          </label>
+                          <Input
+                            id="email"
+                            type="email"
+                            required
+                            placeholder="Enter your email address"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                          Message *
+                        </label>
+                        <Textarea
+                          id="message"
+                          rows={5}
                           required
+                          placeholder="Tell us about your requirements, preferred locations, budget, or any specific questions you have..."
                         />
                       </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="lastName">Last Name</Label>
-                        <Input
-                          id="lastName"
-                          name="lastName"
-                          value={formData.lastName}
-                          onChange={handleChange}
+                      
+                      <div className="flex items-start gap-3">
+                        <input
+                          type="checkbox"
+                          id="consent"
                           required
+                          className="mt-1 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
                         />
+                        <label htmlFor="consent" className="text-sm text-muted-foreground">
+                          I agree to receive communications from Celeste Abode regarding my inquiry and related services. I understand that I can unsubscribe at any time.
+                        </label>
                       </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <Label htmlFor="message">Message</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <Button type="submit" className="w-full pill-button bg-secondary hover:bg-secondary/90 text-white">
-                      Send Inquiry
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
+                      
+                      <Button 
+                        type="submit"
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg"
+                      >
+                        Send Message
+                      </Button>
+                    </form>
+                  </CardContent>
+                </Card>
+              </div>
 
               {/* Contact Information */}
               <div className="space-y-8">
-                <div>
-                  <h2 className="text-2xl font-bold text-foreground mb-6">Contact Information</h2>
-                  <div className="space-y-6">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-6 h-6 text-secondary" />
+                {/* Contact Details */}
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <h2 className="text-2xl font-semibold text-primary mb-6">Contact Information</h2>
+                    
+                    <div className="space-y-6">
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Phone className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                          <p className="text-muted-foreground">+91 [Your Phone Number]</p>
+                          <p className="text-sm text-muted-foreground">Available 24/7 for urgent inquiries</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">Office Address</h3>
-                        <p className="text-muted-foreground">
-                          Sector 62, Noida
-                          <br />
-                          Uttar Pradesh, India
-                        </p>
+                      
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Mail className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                          <p className="text-muted-foreground">info@celesteabode.com</p>
+                          <p className="text-sm text-muted-foreground">We respond within 2 hours</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">Office Locations</h3>
+                          <p className="text-muted-foreground">Noida, Greater Noida, Gurgaon</p>
+                          <p className="text-sm text-muted-foreground">Serving the entire NCR region</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <Clock className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">Business Hours</h3>
+                          <p className="text-muted-foreground">Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                          <p className="text-sm text-muted-foreground">Sunday: By appointment only</p>
+                        </div>
                       </div>
                     </div>
+                  </CardContent>
+                </Card>
 
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Phone className="w-6 h-6 text-secondary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                        <p className="text-muted-foreground">+91 98765 43210</p>
-                        <Button variant="outline" className="mt-2 pill-button bg-transparent">
-                          Call Us Directly
-                        </Button>
-                      </div>
+                {/* Quick Actions */}
+                <Card className="border-0 shadow-lg">
+                  <CardContent className="p-8">
+                    <h3 className="text-xl font-semibold text-primary mb-4">Quick Actions</h3>
+                    
+                    <div className="space-y-4">
+                      <Button 
+                        variant="outline"
+                        className="w-full justify-start gap-3"
+                        asChild
+                      >
+                        <a href="tel:+91XXXXXXXXXX">
+                          <Phone className="w-4 h-4" />
+                          Schedule a Call
+                        </a>
+                      </Button>
+                      
+                      <Button 
+                        variant="outline"
+                        className="w-full justify-start gap-3"
+                        asChild
+                      >
+                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                          <MessageCircle className="w-4 h-4" />
+                          Message on WhatsApp
+                        </a>
+                      </Button>
                     </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-6 h-6 text-secondary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                        <p className="text-muted-foreground">hello@celesteabode.com</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Clock className="w-6 h-6 text-secondary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-foreground mb-1">Business Hours</h3>
-                        <p className="text-muted-foreground">
-                          Monday - Saturday: 9:00 AM - 7:00 PM
-                          <br />
-                          Sunday: 10:00 AM - 5:00 PM
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Map Embed */}
-                <Card className="border-0 bg-card overflow-hidden">
-                  <div className="h-64 bg-muted flex items-center justify-center">
-                    <div className="text-center">
-                      <MapPin className="w-12 h-12 text-secondary mx-auto mb-2" />
-                      <p className="text-muted-foreground">Interactive Map</p>
-                      <p className="text-sm text-muted-foreground">Noida, India</p>
-                    </div>
-                  </div>
+                  </CardContent>
                 </Card>
               </div>
             </div>
           </div>
-        </section>
-      </main>
+        </Section>
 
+        {/* Map Section */}
+        <Section className="bg-muted/30">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-semibold text-primary mb-8 text-center">Our Service Areas</h2>
+            
+            <div className="bg-muted rounded-lg p-8 text-center">
+              <MapPin className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-foreground mb-2">Interactive Map Coming Soon</h3>
+              <p className="text-muted-foreground">
+                We're working on an interactive map to show our service areas and office locations. 
+                For now, please contact us directly for specific location information.
+              </p>
+            </div>
+          </div>
+        </Section>
+      </main>
       <Footer />
     </div>
   )
