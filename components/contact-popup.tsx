@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { X, Calendar, Clock, MapPin } from "lucide-react"
+import { X, Calendar, Clock, MapPin, Loader2 } from "lucide-react"
 
 interface ContactPopupProps {
   isOpen: boolean
@@ -26,23 +26,39 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
     preferredTime: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log("Viewing request submitted:", formData)
-    // You can add API call here
-    onClose()
-    // Reset form
-    setFormData({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
-      preferredDate: "",
-      preferredTime: "",
-      message: "",
-    })
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      setSubmitStatus('success')
+      console.log("Viewing request submitted:", formData)
+      
+      // Reset form and close after success
+      setTimeout(() => {
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          preferredDate: "",
+          preferredTime: "",
+          message: "",
+        })
+        onClose()
+        setSubmitStatus('idle')
+      }, 1500)
+    } catch (error) {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -253,17 +269,39 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                 type="button"
                 variant="outline"
                 onClick={onClose}
-                className="flex-1 h-12 text-base font-medium"
+                disabled={isSubmitting}
+                className="flex-1 h-12 text-base font-medium disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Cancel
               </Button>
               <Button
                 type="submit"
-                className="flex-1 h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+                disabled={isSubmitting}
+                className="flex-1 h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Schedule Viewing
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Scheduling...
+                  </>
+                ) : (
+                  "Schedule Viewing"
+                )}
               </Button>
             </div>
+            
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <div className="text-center text-green-600 text-sm bg-green-50 p-3 rounded-lg border border-green-200">
+                Viewing scheduled successfully! We'll contact you soon to confirm.
+              </div>
+            )}
+            
+            {submitStatus === 'error' && (
+              <div className="text-center text-red-600 text-sm bg-red-50 p-3 rounded-lg border border-red-200">
+                Failed to schedule viewing. Please try again.
+              </div>
+            )}
           </form>
         </CardContent>
       </Card>

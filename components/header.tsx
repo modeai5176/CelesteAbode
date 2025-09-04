@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Menu, X } from "lucide-react"
@@ -51,11 +52,18 @@ export function Header() {
     >
       <div className="max-w-screen-xl mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300 ${isMobile ? 'bg-primary' : (isHomepage && isScrolled ? 'bg-primary' : isHomepage ? 'bg-white' : 'bg-primary')}`}>
-            <span className={`font-semibold text-lg transition-all duration-300 ${isMobile ? 'text-primary-foreground' : (isHomepage && isScrolled ? 'text-primary-foreground' : isHomepage ? 'text-black' : 'text-primary-foreground')}`}>C</span>
+        <Link href="/" className="flex items-center">
+          <div className="relative w-20 h-20 flex items-center justify-center pt-2">
+            <Image
+              src="/logoceleste.png"
+              alt="Celeste Abode Logo"
+              width={80}
+              height={80}
+              className="w-full h-full object-contain"
+              priority
+            />
           </div>
-          <span className={`h4 transition-all duration-300 ${isMobile ? 'text-primary' : (isHomepage && isScrolled ? 'text-primary' : isHomepage ? 'text-white' : 'text-primary')}`}>Celeste Abode</span>
+          <span className={`h4 transition-all duration-300 -ml-1 -mt-1 ${isMobile ? 'text-primary' : (isHomepage && isScrolled ? 'text-primary' : isHomepage ? 'text-white' : 'text-primary')}`}>Celeste Abode</span>
         </Link>
 
         {/* Navigation */}

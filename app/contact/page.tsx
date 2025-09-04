@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { Section } from "@/components/ui/section"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -7,9 +8,30 @@ import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, MessageCircle, Loader2 } from "lucide-react"
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      setSubmitStatus('success')
+      // Reset form
+      e.currentTarget.reset()
+    } catch (error) {
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -39,7 +61,7 @@ export default function ContactPage() {
                   <CardContent className="p-8">
                     <h2 className="text-2xl font-semibold text-primary mb-6">Send us a Message</h2>
                     
-                    <form className="space-y-6">
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
@@ -116,10 +138,30 @@ export default function ContactPage() {
                       
                       <Button 
                         type="submit"
-                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg"
+                        disabled={isSubmitting}
+                        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Send Message
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                            Sending Message...
+                          </>
+                        ) : (
+                          "Send Message"
+                        )}
                       </Button>
+                      
+                      {submitStatus === 'success' && (
+                        <div className="text-center text-green-600 text-sm">
+                          Message sent successfully! We'll get back to you soon.
+                        </div>
+                      )}
+                      
+                      {submitStatus === 'error' && (
+                        <div className="text-center text-red-600 text-sm">
+                          Failed to send message. Please try again.
+                        </div>
+                      )}
                     </form>
                   </CardContent>
                 </Card>
@@ -220,10 +262,10 @@ export default function ContactPage() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-2xl font-semibold text-primary mb-8 text-center">Our Service Areas</h2>
             
-            <div className="bg-muted rounded-lg p-8 text-center">
-              <MapPin className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-foreground mb-2">Interactive Map Coming Soon</h3>
-              <p className="text-muted-foreground">
+            <div className="bg-muted rounded-lg p-8 text-center flex flex-col items-center justify-center">
+              <MapPin className="w-16 h-16 text-muted-foreground mb-4" />
+              <h3 className="text-lg font-semibold text-foreground mb-2 text-center">Interactive Map Coming Soon</h3>
+              <p className="text-muted-foreground text-center max-w-2xl mx-auto">
                 We're working on an interactive map to show our service areas and office locations. 
                 For now, please contact us directly for specific location information.
               </p>
