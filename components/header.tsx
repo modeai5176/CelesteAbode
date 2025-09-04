@@ -52,7 +52,7 @@ export function Header() {
     >
       <div className="max-w-screen-xl mx-auto px-6 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center">
+        <Link href="/" className="flex items-center -ml-2">
           <div className="relative w-20 h-20 flex items-center justify-center pt-2">
             <Image
               src="/logoceleste.png"
@@ -133,10 +133,10 @@ export function Header() {
         <Button
           variant="ghost"
           size="sm"
-          className="md:hidden p-3 mr-4"
+          className="md:hidden p-4 mr-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
         </Button>
       </div>
 
