@@ -61,9 +61,6 @@ export function BrandEssay() {
             {/* Exclusive Access */}
             <div>
               <h4 className="h4 text-foreground mb-3">Exclusive Access</h4>
-              <p className="body-text text-muted-foreground">
-                We provide exclusive access to premium projects before public launch, comprehensive project analysis and investment guidance, and end-to-end support from selection to possession. Our trusted partnerships with leading developers ensure you get the best opportunities in the market.
-              </p>
             </div>
 
             {/* Closing Statement */}
