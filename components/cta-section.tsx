@@ -33,11 +33,11 @@ export function CTASection() {
             <span>+91 9818735258</span>
           </a>
           <a 
-            href="mailto:celsteabode@gmail.com" 
+            href="mailto:celesteabode@gmail.com" 
             className="flex items-center gap-2 hover:text-secondary transition-colors"
           >
             <Mail className="w-4 h-4" />
-            <span>celsteabode@gmail.com</span>
+            <span>celesteabode@gmail.com</span>
           </a>
         </div>
       </div>

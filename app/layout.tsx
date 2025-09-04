@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { LoadingProvider } from "@/components/loading-provider"
 import "./globals.css"
 
 const inter = Inter({
@@ -76,7 +75,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#000000" />
       </head>
       <body className={`${inter.variable} antialiased`}>
-        <LoadingProvider>{children}</LoadingProvider>
+        {children}
       </body>
     </html>
   )

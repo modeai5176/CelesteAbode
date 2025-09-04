@@ -35,27 +35,57 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
     setSubmitStatus('idle')
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      setSubmitStatus('success')
-      console.log("Viewing request submitted:", formData)
-      
-      // Reset form and close after success
-      setTimeout(() => {
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phone: "",
-          preferredDate: "",
-          preferredTime: "",
-          message: "",
-        })
-        onClose()
-        setSubmitStatus('idle')
-      }, 1500)
+      const data = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        preferredDate: formData.preferredDate,
+        preferredTime: formData.preferredTime,
+        message: formData.message,
+        propertyTitle: propertyTitle || '',
+        propertyLocation: propertyLocation || ''
+      }
+
+      const response = await fetch('/api/viewing', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (response.ok) {
+        const result = await response.json()
+        if (result.success) {
+          setSubmitStatus('success')
+          console.log("Viewing request submitted successfully:", result.messageId)
+          
+          // Reset form and close after success
+          setTimeout(() => {
+            setFormData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              phone: "",
+              preferredDate: "",
+              preferredTime: "",
+              message: "",
+            })
+            onClose()
+            setSubmitStatus('idle')
+          }, 1500)
+        } else {
+          console.error('Form submission error:', result.error)
+          setSubmitStatus('error')
+        }
+      } else {
+        console.error('HTTP error:', response.status)
+        setSubmitStatus('error')
+      }
     } catch (error) {
       setSubmitStatus('error')
+      console.error('Form submission error:', error)
     } finally {
       setIsSubmitting(false)
     }
@@ -277,7 +307,7 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 h-12 bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-white text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
@@ -285,7 +315,7 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                     Scheduling...
                   </>
                 ) : (
-                  "Schedule Viewing"
+                  'Schedule Viewing'
                 )}
               </Button>
             </div>
@@ -293,13 +323,7 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
             {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="text-center text-green-600 text-sm bg-green-50 p-3 rounded-lg border border-green-200">
-                Viewing scheduled successfully! We'll contact you soon to confirm.
-              </div>
-            )}
-            
-            {submitStatus === 'error' && (
-              <div className="text-center text-red-600 text-sm bg-red-50 p-3 rounded-lg border border-red-200">
-                Failed to schedule viewing. Please try again.
+                ✅ Viewing scheduled successfully! We'll contact you within 2 hours to confirm.
               </div>
             )}
           </form>

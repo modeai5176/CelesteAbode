@@ -70,9 +70,6 @@ export function Footer() {
               <Link href="/properties" className="block hover:text-secondary transition-colors">
                 Properties
               </Link>
-              <Link href="/reviews" className="block hover:text-secondary transition-colors">
-                Reviews
-              </Link>
               <Link href="/contact" className="block hover:text-secondary transition-colors">
                 Contact
               </Link>
@@ -89,7 +86,8 @@ export function Footer() {
                   href="https://www.instagram.com/celesteabode/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center hover:bg-secondary/30 transition-colors"
+                  className="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center hover:bg-secondary/30 hover:scale-110 transition-all duration-200"
+                  title="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
                 </Link>
