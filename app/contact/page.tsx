@@ -139,7 +139,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                          <p className="text-muted-foreground">+91 [Your Phone Number]</p>
+                          <p className="text-muted-foreground">+91 9818735258</p>
                           <p className="text-sm text-muted-foreground">Available 24/7 for urgent inquiries</p>
                         </div>
                       </div>
@@ -150,7 +150,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                          <p className="text-muted-foreground">info@celesteabode.com</p>
+                          <p className="text-muted-foreground">celsteabode@gmail.com</p>
                           <p className="text-sm text-muted-foreground">We respond within 2 hours</p>
                         </div>
                       </div>
@@ -161,7 +161,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">Office Locations</h3>
-                          <p className="text-muted-foreground">Noida, Greater Noida, Gurgaon</p>
+                          <p className="text-muted-foreground">Noida, IN</p>
                           <p className="text-sm text-muted-foreground">Serving the entire NCR region</p>
                         </div>
                       </div>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                         className="w-full justify-start gap-3"
                         asChild
                       >
-                        <a href="tel:+91XXXXXXXXXX">
+                        <a href="tel:+919818735258">
                           <Phone className="w-4 h-4" />
                           Schedule a Call
                         </a>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                         className="w-full justify-start gap-3"
                         asChild
                       >
-                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/919910906306" target="_blank" rel="noopener noreferrer">
                           <MessageCircle className="w-4 h-4" />
                           Message on WhatsApp
                         </a>

@@ -226,9 +226,9 @@ export default function PrivacyPolicyPage() {
                   If you have any questions about this Privacy Policy or our data practices, please contact us:
                 </p>
                 <div className="bg-muted/30 p-6 rounded-lg">
-                  <p><strong>Email:</strong> privacy@celesteabode.com</p>
-                  <p><strong>Phone:</strong> +91 [Your Phone Number]</p>
-                  <p><strong>Address:</strong> Noida, Greater Noida, Gurgaon, India</p>
+                  <p><strong>Email:</strong> celsteabode@gmail.com</p>
+                  <p><strong>Phone:</strong> +91 9818735258</p>
+                  <p><strong>Address:</strong> Noida, IN</p>
                 </div>
               </div>
             </section>
@@ -239,3 +239,5 @@ export default function PrivacyPolicyPage() {
     </div>
   )
 }
+
+

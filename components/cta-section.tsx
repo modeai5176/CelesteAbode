@@ -26,18 +26,18 @@ export function CTASection() {
         {/* Inline Contact Links */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
           <a 
-            href="tel:+91XXXXXXXXXX" 
+            href="tel:+919818735258" 
             className="flex items-center gap-2 hover:text-secondary transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span>+91 [Your Phone Number]</span>
+            <span>+91 9818735258</span>
           </a>
           <a 
-            href="mailto:info@celesteabode.com" 
+            href="mailto:celsteabode@gmail.com" 
             className="flex items-center gap-2 hover:text-secondary transition-colors"
           >
             <Mail className="w-4 h-4" />
-            <span>info@celesteabode.com</span>
+            <span>celsteabode@gmail.com</span>
           </a>
         </div>
       </div>
