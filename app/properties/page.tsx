@@ -27,8 +27,8 @@ export default function PropertiesPage() {
       title: "FOREST WALK VILLAS",
       subtitle: "Phase 2 - Luxury Forest Living",
       location: "GDA Approved Location",
-      price: "₹1,75,000",
-      priceUnit: "per Sq. Yd.",
+      price: "Contact for Pricing",
+      priceUnit: "",
       image: "/ForestWalk/LandingpageVILLA.jpeg",
       beds: "Customizable",
       baths: "Customizable",
@@ -108,6 +108,29 @@ export default function PropertiesPage() {
         "/CRCMaesta/WellNessZone.png",
         "/CRCMaesta/MiniTheater.png",
         "/CRCMaesta/FamilyLounge.png"
+      ]
+    },
+    {
+      id: 5,
+      type: "Apartments",
+      title: "ETERNIA",
+      subtitle: "Premium Residences in Greater Noida",
+      location: "Tech Zone IV, Greater Noida (W)",
+      price: "Contact for Pricing",
+      priceUnit: "",
+      image: "/Eternia/1.png",
+      beds: "3, 3+1 & 4+1 BHK",
+      baths: "2-3 Baths",
+      area: "1086-1599 sq.ft.",
+      featured: true,
+      status: "Under Construction",
+      developer: "Premium Developer",
+      highlights: ["Skyline Views", "Green Belt Facing", "EV Charging", "25K sq.ft. Clubhouse"],
+      amenities: [
+        "/Eternia/2.png",
+        "/Eternia/3.png",
+        "/Eternia/4.png",
+        "/Eternia/5.png"
       ]
     }
   ]

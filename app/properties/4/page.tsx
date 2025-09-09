@@ -639,34 +639,6 @@ export default function CRCMaestaPage() {
           )}
         </div>
 
-        {/* CTA Section */}
-        <section className="bg-gradient-to-r from-primary to-secondary text-white py-20">
-          <div className="max-w-4xl mx-auto text-center px-6">
-            <h2 className="text-3xl md:text-4xl font-semibold mb-6">
-              Ready to Create Your Picture Perfect Moments?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              CRC Maesta offers the perfect blend of luxury, comfort, and convenience. 
-              Experience holistic living with world-class amenities and premium finishes.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                size="lg"
-                className="bg-white text-primary hover:bg-white/90 px-8 py-4 text-lg"
-                onClick={handleContact}
-              >
-                Schedule Viewing
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-2 border-white text-primary bg-white hover:bg-white/90 hover:text-black px-8 py-4 text-lg"
-              >
-                Download Brochure
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* Contact Popup */}

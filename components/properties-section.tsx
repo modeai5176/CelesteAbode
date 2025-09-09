@@ -40,6 +40,14 @@ const properties = [
     address: "Sector 1, Greater Noida West",
     image: "/CRCMaesta/TOWERVIEW.png",
     status: "Under Construction"
+  },
+  {
+    id: 5,
+    name: "ETERNIA",
+    builder: "Premium Developer",
+    address: "Tech Zone IV, Greater Noida (W)",
+    image: "/Eternia/1.png",
+    status: "Under Construction"
   }
 ]
 
