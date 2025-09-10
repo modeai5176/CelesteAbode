@@ -48,6 +48,14 @@ const properties = [
     address: "Tech Zone IV, Greater Noida (W)",
     image: "/Eternia/1.png",
     status: "Under Construction"
+  },
+  {
+    id: 6,
+    name: "THE BROOK & THE RIVULET",
+    builder: "Renowned Developer",
+    address: "Greater Noida (Prime 3-Side Open Corner Plot)",
+    image: "/Brook and Rivulet/1.png",
+    status: "Under Construction"
   }
 ]
 

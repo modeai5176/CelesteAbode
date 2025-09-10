@@ -132,6 +132,29 @@ export default function PropertiesPage() {
         "/Eternia/4.png",
         "/Eternia/5.png"
       ]
+    },
+    {
+      id: 6,
+      type: "Apartments",
+      title: "THE BROOK & THE RIVULET",
+      subtitle: "Premium High-Rise Residences",
+      location: "Greater Noida (Prime 3-Side Open Corner Plot)",
+      price: "Contact for Pricing",
+      priceUnit: "",
+      image: "/Brook and Rivulet/1.png",
+      beds: "Premium BHK",
+      baths: "Premium Baths",
+      area: "Premium Sizes",
+      featured: true,
+      status: "Under Construction",
+      developer: "Renowned Developer",
+      highlights: ["3-Side Open Plot", "Earthquake Resistant", "EV Charging", "30,750 sq.ft. Clubhouses"],
+      amenities: [
+        "/Brook and Rivulet/2.png",
+        "/Brook and Rivulet/3.png",
+        "/Brook and Rivulet/4.png",
+        "/Brook and Rivulet/5.png"
+      ]
     }
   ]
 
