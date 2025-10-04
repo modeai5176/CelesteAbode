@@ -33,11 +33,11 @@ export function CTASection() {
             <span>+91 9818735258</span>
           </a>
           <a 
-            href="mailto:celesteabode@gmail.com" 
+            href={`mailto:${process.env.NEXT_PUBLIC_APP_EMAIL || 'celesteabode@gmail.com'}`} 
             className="flex items-center gap-2 hover:text-secondary transition-colors"
           >
             <Mail className="w-4 h-4" />
-            <span>celesteabode@gmail.com</span>
+            <span>{process.env.NEXT_PUBLIC_APP_EMAIL || 'celesteabode@gmail.com'}</span>
           </a>
         </div>
       </div>

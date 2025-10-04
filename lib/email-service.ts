@@ -2,12 +2,12 @@ import nodemailer from 'nodemailer';
 
 // Email configuration
 const EMAIL_CONFIG = {
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false, // true for 465, false for other ports
+  host: process.env.SMTP_HOST || 'smtp.gmail.com',
+  port: parseInt(process.env.SMTP_PORT || '587'),
+  secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
   auth: {
-    user: 'celesteabode@gmail.com',
-    pass: 'uzez qtjp gwbo yodb' // App password
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS
   }
 };
 
@@ -290,14 +290,14 @@ export async function sendFormSubmissionEmail(data: {
   try {
     const { subject, html } = createFormSubmissionEmail(data);
     
-    const mailOptions = {
-      from: '"Celeste Abode" <celesteabode@gmail.com>',
-      to: 'celesteabode@gmail.com',
-      replyTo: data.email,
-      subject: subject,
-      html: html,
-      text: `New ${data.formType} form submission from ${data.firstName} ${data.lastName} (${data.email})`
-    };
+          const mailOptions = {
+            from: process.env.EMAIL_FROM || '"Celeste Abode" <celesteabode@gmail.com>',
+            to: process.env.EMAIL_TO || 'celesteabode@gmail.com',
+            replyTo: data.email,
+            subject: subject,
+            html: html,
+            text: `New ${data.formType} form submission from ${data.firstName} ${data.lastName} (${data.email})`
+          };
 
     const result = await transporter.sendMail(mailOptions);
     console.log('Email sent successfully:', result.messageId);

@@ -241,7 +241,7 @@ export default function ContactPage() {
                           </div>
                           <div className="flex-1">
                             <h3 className="font-bold text-foreground mb-1 text-sm">Email</h3>
-                            <p className="text-foreground font-semibold mb-1 text-sm">celesteabode@gmail.com</p>
+                            <p className="text-foreground font-semibold mb-1 text-sm">{process.env.NEXT_PUBLIC_APP_EMAIL || 'celesteabode@gmail.com'}</p>
                             <p className="text-xs text-muted-foreground">We respond within 2 hours</p>
                           </div>
                         </div>
