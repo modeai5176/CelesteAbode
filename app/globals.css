@@ -8,78 +8,93 @@
 
 /* Sophisticated luxury color palette with elegant blues and neutral tones */
 :root {
-  --background: #fafbfc;
-  --foreground: #1e293b;
-  --card: #ffffff;
-  --card-foreground: #1e293b;
-  --popover: #ffffff;
-  --popover-foreground: #1e293b;
-  --primary: #1e3a8a;
-  --primary-foreground: #ffffff;
-  --secondary: #3b82f6;
-  --secondary-foreground: #ffffff;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
-  --accent: #1e40af;
-  --accent-foreground: #ffffff;
-  --neutral-blue: #93c5fd;
-  --neutral-blue-foreground: #1e293b;
-  --destructive: #dc2626;
-  --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #ffffff;
-  --ring: rgba(30, 58, 138, 0.2);
-  --chart-1: #1e3a8a;
-  --chart-2: #3b82f6;
-  --chart-3: #6366f1;
-  --chart-4: #8b5cf6;
-  --chart-5: #a855f7;
+  /* Dark elegant palette (primary UI / default theme) */
+  --background: #2B2C2E; /* deep charcoal gray */
+  --foreground: #FFFFFF; /* white text */
+  --card: #323335; /* slightly lighter charcoal for cards */
+  --card-foreground: #FFFFFF;
+  --popover: #323335;
+  --popover-foreground: #FFFFFF;
+
+  /* Primary / Accent colors follow the gold accent */
+  --primary: #C4A75B; /* gold */
+  --primary-foreground: #2B2C2E; /* dark text on gold */
+  --secondary: #B99F55; /* slightly muted gold */
+  --secondary-foreground: #2B2C2E;
+  --muted: #3C3D3F; /* soft muted gray */
+  --muted-foreground: #bdbdbd;
+  --accent: #C4A75B;
+  --accent-foreground: #2B2C2E;
+  --neutral-blue: #323335; /* keep neutral mapped to card tone */
+  --neutral-blue-foreground: #FFFFFF;
+
+  /* Other utility colors */
+  --destructive: #c94b4b;
+  --destructive-foreground: #FFFFFF;
+  --border: #3C3D3F; /* soft gray border */
+  --input: #323335;
+  --ring: rgba(196, 167, 91, 0.3); /* gold ring */
+
+  /* Charts — tonal variations based on the palette */
+  --chart-1: #C4A75B; /* gold */
+  --chart-2: #B99F55;
+  --chart-3: #8f7a40;
+  --chart-4: #6f5b33;
+  --chart-5: #4f3f24;
+
   --radius: 0.5rem;
-  --sidebar: #f8fafc;
-  --sidebar-foreground: #1e293b;
-  --sidebar-primary: #ffffff;
-  --sidebar-primary-foreground: #1e3a8a;
-  --sidebar-accent: #1e40af;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #e2e8f0;
-  --sidebar-ring: rgba(30, 58, 138, 0.2);
+
+  /* Sidebar uses darker card/background tones aligned with palette */
+  --sidebar: #2F3032;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #323335;
+  --sidebar-primary-foreground: #C4A75B;
+  --sidebar-accent: #C4A75B;
+  --sidebar-accent-foreground: #2B2C2E;
+  --sidebar-border: #3C3D3F;
+  --sidebar-ring: rgba(196, 167, 91, 0.2);
 }
 
 .dark {
-  --background: #0f172a;
-  --foreground: #f8fafc;
-  --card: #1e293b;
-  --card-foreground: #f8fafc;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --primary: #3b82f6;
-  --primary-foreground: #0f172a;
-  --secondary: #1e40af;
-  --secondary-foreground: #f8fafc;
-  --muted: #334155;
-  --muted-foreground: #94a3b8;
-  --accent: #1e3a8a;
-  --accent-foreground: #f8fafc;
-  --neutral-blue: #bfdbfe;
-  --neutral-blue-foreground: #0f172a;
-  --destructive: #ef4444;
-  --destructive-foreground: #f8fafc;
-  --border: #334155;
-  --input: #1e293b;
-  --ring: rgba(59, 130, 246, 0.3);
-  --chart-1: #3b82f6;
-  --chart-2: #1e40af;
-  --chart-3: #6366f1;
-  --chart-4: #8b5cf6;
-  --chart-5: #a855f7;
-  --sidebar: #0f172a;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #3b82f6;
-  --sidebar-primary-foreground: #0f172a;
-  --sidebar-accent: #1e40af;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: #334155;
-  --sidebar-ring: rgba(59, 130, 246, 0.3);
+  /* Slightly deeper, richer variants for true dark mode */
+  --background: #1F2021; /* deeper charcoal */
+  --foreground: #FFFFFF;
+  --card: #292A2B; /* darker card */
+  --card-foreground: #FFFFFF;
+  --popover: #292A2B;
+  --popover-foreground: #FFFFFF;
+
+  --primary: #A98945; /* slightly darker gold */
+  --primary-foreground: #1F2021;
+  --secondary: #9a7f3f;
+  --secondary-foreground: #1F2021;
+  --muted: #2B2C2E;
+  --muted-foreground: #9b9b9b;
+  --accent: #B7904F;
+  --accent-foreground: #1F2021;
+  --neutral-blue: #292A2B;
+  --neutral-blue-foreground: #FFFFFF;
+
+  --destructive: #a33f3f;
+  --destructive-foreground: #FFFFFF;
+  --border: #2E2F30; /* darker border */
+  --input: #292A2B;
+  --ring: rgba(196, 167, 91, 0.4);
+
+  --chart-1: #A98945;
+  --chart-2: #9a7f3f;
+  --chart-3: #7b6330;
+  --chart-4: #624e27;
+  --chart-5: #4b3b1d;
+
+  --sidebar: #1F2021;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #292A2B;
+  --sidebar-primary-foreground: #A98945;
+  --sidebar-accent: #A98945;
+  --sidebar-accent-foreground: #1F2021;
+  --sidebar-border: #2E2F30;
+  --sidebar-ring: rgba(196, 167, 91, 0.35);
 }
 
 @theme inline {
