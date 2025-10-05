@@ -39,6 +39,7 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Dark theme colors */
 .dark {
   --background: #2B2C2E;
   --foreground: #EAEAEA;

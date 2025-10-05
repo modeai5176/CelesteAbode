@@ -1,25 +1,32 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { PillButton } from "@/components/ui/pill-button"
-import { StatList } from "@/components/ui/stat-list"
-import { motion } from "framer-motion"
-
+import Image from "next/image";
+import { PillButton } from "@/components/ui/pill-button";
+import { StatList } from "@/components/ui/stat-list";
+import { motion } from "framer-motion";
+import { useRef } from "react"; /* EDIT: add useRef import for VariableProximity container */
+import VariableProximity from "./VariableProximity"; /* EDIT: import VariableProximity component */
 export function HeroSection() {
   const stats = [
     {
       label: "Lifestyle-centric curation",
-      description: "Curating properties that match your lifestyle aspirations"
+      description: "Curating properties that match your lifestyle aspirations",
     },
     {
       label: "Technology-enabled precision",
-      description: "Leveraging data and technology for precise property matching"
+      description:
+        "Leveraging data and technology for precise property matching",
     },
     {
       label: "Human-centered consulting",
-      description: "Personalized guidance from experienced real estate professionals"
-    }
-  ]
+      description:
+        "Personalized guidance from experienced real estate professionals",
+    },
+  ];
+
+  const containerRef = useRef<HTMLDivElement | null>(
+    null
+  ); /* EDIT: ref passed to VariableProximity */
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -36,7 +43,6 @@ export function HeroSection() {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/50 to-black/40" />
-
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -44,9 +50,36 @@ export function HeroSection() {
         transition={{ duration: 0.8 }}
         className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white"
       >
-        <h1 className="h1 text-white mb-6">
-          From Masterpieces of Time<br />
-          to <span className="text-secondary">Masterpieces of Living</span>
+        {/* EDIT: replaced static heading with VariableProximity animated words (font inherited) */}
+        <h1 className="h1 text-white mb-2 leading-snug tracking-tight text-4xl md:text-5xl lg:text-6xl">
+          <div ref={containerRef} style={{ display: "inline-block" }}>
+            <VariableProximity
+              label={"From Masterpieces of Time To"}
+              className={
+                "block text-white whitespace-nowrap"
+              } /*prevent wrapping so this phrase stays on one line */
+              fromFontVariationSettings={"'wght' 400, 'opsz' 9"}
+              toFontVariationSettings={"'wght' 900, 'opsz' 40"}
+              containerRef={containerRef}
+              radius={140}
+              falloff="linear"
+              style={{
+                fontFamily: "inherit",
+              }} /* EDIT: inherit existing font-family */
+            />
+            <VariableProximity
+              label={"Masterpieces of Living"}
+              className={"block text-secondary mt-1"}
+              fromFontVariationSettings={"'wght' 400, 'opsz' 9"}
+              toFontVariationSettings={"'wght' 900, 'opsz' 40"}
+              containerRef={containerRef}
+              radius={140}
+              falloff="linear"
+              style={{
+                fontFamily: "inherit",
+              }} /* EDIT: inherit existing font-family */
+            />
+          </div>
         </h1>
 
         <p className="lead text-white/90 mb-12 max-w-2xl mx-auto">
@@ -54,7 +87,7 @@ export function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-12 md:mb-16">
-          <PillButton 
+          <PillButton
             variant="primary"
             size="lg"
             className="sm:text-base sm:px-8 sm:py-4 text-sm px-4 py-2"
@@ -62,7 +95,7 @@ export function HeroSection() {
           >
             <a href="/properties">Explore Properties</a>
           </PillButton>
-          <PillButton 
+          <PillButton
             variant="outline"
             size="lg"
             className="border-white text-white hover:bg-white hover:text-primary sm:text-base sm:px-8 sm:py-4 text-sm px-4 py-2"
@@ -78,5 +111,5 @@ export function HeroSection() {
         <StatList items={stats} />
       </div>
     </section>
-  )
+  );
 }

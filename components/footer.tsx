@@ -34,7 +34,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    // EDIT: changed footer bg from primary (yellow) to a lighter black hex for a premium dark footer
+    <footer className="bg-[#0f1112] text-foreground">
+      {" "}
+      {/* EDIT: lighter shade of black to match bottom image */}
       <div className="max-w-screen-xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Contact Column */}
@@ -42,20 +45,29 @@ export function Footer() {
             <h3 className="h4 mb-6">Contact</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3 group cursor-pointer">
-                <Phone className="w-5 h-5 text-black group-hover:text-[#F6F5F3] transition-colors" />
-                <span className="group-hover:text-[#F6F5F3] transition-colors">
+                <Phone className="w-5 h-5 text-white group-hover:text-primary transition-colors" />{" "}
+                {/* EDIT: icon default white, hover to primary */}
+                <span className="text-white group-hover:text-primary transition-colors">
+                  {" "}
+                  {/* EDIT: contact text default white, hover to primary */}
                   +91 9818735258
                 </span>
               </div>
               <div className="flex items-center gap-3 group cursor-pointer">
-                <Mail className="w-5 h-5 text-black group-hover:text-[#F6F5F3] transition-colors" />
-                <span className="group-hover:text-[#F6F5F3] transition-colors">
+                <Mail className="w-5 h-5 text-white group-hover:text-primary transition-colors" />{" "}
+                {/* EDIT: icon default white, hover to primary */}
+                <span className="text-white group-hover:text-primary transition-colors">
+                  {" "}
+                  {/* EDIT: contact text default white, hover to primary */}
                   celsteabode@gmail.com
                 </span>
               </div>
               <div className="flex items-center gap-3 group cursor-pointer">
-                <MapPin className="w-5 h-5 text-black group-hover:text-[#F6F5F3] transition-colors" />
-                <span className="group-hover:text-[#F6F5F3] transition-colors">
+                <MapPin className="w-5 h-5 text-white group-hover:text-primary transition-colors" />{" "}
+                {/* EDIT: icon default white, hover to primary */}
+                <span className="text-white group-hover:text-primary transition-colors">
+                  {" "}
+                  {/* EDIT: contact text default white, hover to primary */}
                   Noida, IN
                 </span>
               </div>
@@ -68,33 +80,33 @@ export function Footer() {
             <div className="space-y-3">
               <Link
                 href="/"
-                className="block hover:text-[#F6F5F3] transition-colors"
+                className="block text-white hover:text-primary transition-colors"
               >
-                Home
+                Home{/* EDIT: footer nav default white, hover primary */}
               </Link>
               <Link
                 href="/philosophy"
-                className="block hover:text-[#F6F5F3] transition-colors"
+                className="block text-white hover:text-primary transition-colors"
               >
-                Philosophy
+                Philosophy{/* EDIT: footer nav default white, hover primary */}
               </Link>
               <Link
                 href="/services"
-                className="block hover:text-[#F6F5F3] transition-colors"
+                className="block text-white hover:text-primary transition-colors"
               >
-                Services
+                Services{/* EDIT: footer nav default white, hover primary */}
               </Link>
               <Link
                 href="/properties"
-                className="block hover:text-[#F6F5F3] transition-colors"
+                className="block text-white hover:text-primary transition-colors"
               >
-                Properties
+                Properties{/* EDIT: footer nav default white, hover primary */}
               </Link>
               <Link
                 href="/contact"
-                className="block hover:text-[#F6F5F3] transition-colors"
+                className="block text-white hover:text-primary transition-colors"
               >
-                Contact
+                Contact{/* EDIT: footer nav default white, hover primary */}
               </Link>
             </div>
           </div>
@@ -109,10 +121,11 @@ export function Footer() {
                   href="https://www.instagram.com/celesteabode/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center hover:bg-secondary/30 hover:scale-110 transition-all duration-200"
+                  className="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center hover:bg-secondary/30 hover:scale-110 transition-all duration-200 group"
                   title="Instagram"
                 >
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-5 h-5 text-white group-hover:text-primary transition-colors" />{" "}
+                  {/* EDIT: social icon default white, hover primary */}
                 </Link>
                 <Link
                   href="https://wa.me/919910906306"
@@ -142,7 +155,7 @@ export function Footer() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       disabled={isSubscribing}
-                      className="bg-card/80 border-border text-foreground placeholder:text-muted-foreground/60 disabled:opacity-50 px-3 py-2 rounded-md"
+                      className="bg-card/80 border-border text-foreground placeholder:text-muted-foreground/60 disabled:opacity-50 px-3 py-2 rounded-md" /* EDIT: switched newsletter input to bg-card and border-border for visibility */
                       required
                     />
                     <Button
@@ -176,23 +189,28 @@ export function Footer() {
         </div>
 
         {/* Legal Links */}
-        <div className="border-t border-primary-foreground/20 pt-8">
+        {/* EDIT: adjusted top border to use border-border/40 to better suit the new footer background */}
+        <div className="border-t border-border/40 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-primary-foreground/80">
-              © 2024 Celeste Abode Private Limited. All rights reserved.
+            <div className="text-sm text-primary">
+              {" "}
+              {/* EDIT: copyright text changed to primary (yellow) */}© 2024
+              Celeste Abode Private Limited. All rights reserved.
             </div>
             <div className="flex gap-6 text-sm">
               <Link
                 href="/privacy-policy"
-                className="hover:text-[#F6F5F3] transition-colors"
+                className="text-white hover:text-primary transition-colors"
               >
                 Privacy Policy
+                {/* EDIT: legal link default white, hover primary */}
               </Link>
               <Link
                 href="/terms"
-                className="hover:text-[#F6F5F3] transition-colors"
+                className="text-white hover:text-primary transition-colors"
               >
                 Terms of Service
+                {/* EDIT: legal link default white, hover primary */}
               </Link>
             </div>
           </div>

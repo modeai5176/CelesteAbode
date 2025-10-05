@@ -123,7 +123,7 @@ export default function ContactPage() {
                             name="firstName"
                             type="text"
                             required
-                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm"
+                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm" /* EDIT: used theme card/bg variables */
                           />
                         </div>
                         <div className="space-y-1">
@@ -138,7 +138,7 @@ export default function ContactPage() {
                             name="lastName"
                             type="text"
                             required
-                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm"
+                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm" /* EDIT: used theme card/bg variables */
                           />
                         </div>
                       </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
                             name="phone"
                             type="tel"
                             required
-                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm"
+                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm" /* EDIT: used theme card/bg variables */
                           />
                         </div>
                         <div className="space-y-1">
@@ -171,7 +171,7 @@ export default function ContactPage() {
                             name="email"
                             type="email"
                             required
-                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm"
+                            className="h-9 border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg text-sm" /* EDIT: used theme card/bg variables */
                           />
                         </div>
                       </div>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                           rows={3}
                           required
                           placeholder="Tell us about your requirements, preferred locations, budget, or any specific questions you have..."
-                          className="border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg resize-none text-sm"
+                          className="border-2 border-border/50 focus:border-primary transition-all duration-300 rounded-lg bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-md focus:shadow-lg resize-none text-sm" /* EDIT: used theme card/bg variables */
                         />
                       </div>
 

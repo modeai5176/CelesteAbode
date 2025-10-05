@@ -40,18 +40,20 @@ export function Header() {
     };
   }, []);
 
+  // EDIT: navbar updated to use dark glassmorphism instead of white strip
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 h-20"
       style={{
         height: headerHeight,
         backgroundColor: isMobile
-          ? "rgba(255, 255, 255, 0.95)"
+          ? "rgba(13,13,13,0.9)" // dark glass for mobile
           : isHomepage && isScrolled
-          ? "rgba(255, 255, 255, 0.95)"
+          ? "rgba(13,13,13,0.72)" // dark glass when scrolled on homepage
           : isHomepage
           ? "transparent"
-          : "rgba(255, 255, 255, 0.95)",
+          : "rgba(13,13,13,0.85)", // dark glass for internal pages
+        // EDIT: Use existing blur values but keep dark glass look
         backdropFilter: isMobile
           ? "blur(8px)"
           : isHomepage && isScrolled
@@ -59,13 +61,14 @@ export function Header() {
           : isHomepage
           ? "none"
           : "blur(20px)",
+        // EDIT: subtle border color adjusted for contrast on dark strip
         borderColor: isMobile
-          ? "rgba(0, 0, 0, 0.1)"
+          ? "rgba(255,255,255,0.04)"
           : isHomepage && isScrolled
-          ? "rgba(0, 0, 0, 0.1)"
+          ? "rgba(255,255,255,0.04)"
           : isHomepage
           ? "transparent"
-          : "rgba(0, 0, 0, 0.1)",
+          : "rgba(255,255,255,0.04)",
       }}
     >
       <div className="max-w-screen-xl mx-auto px-6 h-full flex items-center justify-between">
@@ -97,12 +100,13 @@ export function Header() {
         </Link>
 
         {/* Navigation */}
+        {/* EDIT: nav background for homepage changed to use card-based translucent bg */}
         <nav
           className={`hidden md:flex items-center rounded-full px-2 py-3 border transition-all duration-300 ${
             isHomepage && isScrolled
               ? "bg-muted/30 border-black/20"
               : isHomepage
-              ? "bg-white/20 border-gray-300/60"
+              ? "bg-card/20 border-border/40"
               : "bg-muted/30 border-black/20"
           }`}
         >
