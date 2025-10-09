@@ -9,56 +9,58 @@
 
 /* Sophisticated luxury color palette with elegant blues and neutral tones */
 :root {
-  /* Dark luxury palette (user update) */
-  --background: #0A0A0A; /* Deep velvet black */
-  --foreground: #F5F5F5; /* Body paragraph text (soft white) */
-  --card: #0D0D0D; /* Slightly lighter card surface */
-  --card-foreground: #F5F5F5;
-  --popover: #0D0D0D;
-  --popover-foreground: #F5F5F5;
+  /* Light background */
+  --background: #F9FAFB; /* Clean light-gray white */
+  --foreground: #1E293B; /* Slate blue-gray text */
+  --card: #FFFFFF; /* White card surface */
+  --card-foreground: #475569; /* Muted gray text on cards */
+  --popover: #FFFFFF; /* Popover background */
+  --popover-foreground: #475569; /* Popover text */
 
-  /* Champagne gold for headings/tagline */
+  /* Primary / Accent */
   --primary: #E3C67A; /* Champagne gold */
-  --primary-foreground: #0A0A0A; /* dark text on gold */
-  --secondary: #D9B86A; /* slightly muted gold */
-  --secondary-foreground: #0A0A0A;
+  --primary-foreground: #1E293B; /* Text on gold elements */
+  --secondary: #CBD5E1; /* Soft gray-blue */
+  --secondary-foreground: #1E293B; /* Text on secondary accents */
+  --accent: #E3C67A; /* Accent / hover elements */
+  --accent-foreground: #1E293B;
 
-  --muted: #121212; /* toned down muted surface */
-  --muted-foreground: rgba(245,245,245,0.72);
-  --accent: #E3C67A;
-  --accent-foreground: #0A0A0A;
-  --neutral-blue: #0F0F0F;
-  --neutral-blue-foreground: #F5F5F5;
+  /* Muted / Neutral */
+  --muted: #F0F4F8; /* Light subtle sections */
+  --muted-foreground: #475569; /* Text on muted areas */
+  --neutral-blue: #F9FAFB; /* Neutral background */
+  --neutral-blue-foreground: #1E293B;
 
-  /* Other utility colors */
-  --destructive: #c94b4b;
-  --destructive-foreground: #FFFFFF;
-  --border: #1A1A1A; /* soft dark border */
-  --input: #0D0D0D;
-  --ring: rgba(227,198,122,0.25); /* gold ring (rgba of #E3C67A) */
+  /* Utility colors */
+  --destructive: #C94B4B; /* Error / warning red */
+  --destructive-foreground: #FFFFFF; /* Text on red alerts */
+  --border: #CBD5E1; /* Soft gray-blue borders */
+  --input: #FFFFFF; /* Input backgrounds */
+  --ring: rgba(227,198,122,0.25); /* Semi-transparent gold focus ring */
 
-  /* Charts — tonal variations based on the palette */
-  --chart-1: #E3C67A;
-  --chart-2: #D9B86A;
-  --chart-3: #A98E4B;
-  --chart-4: #7A6236;
-  --chart-5: #4E391F;
+  /* Chart colors */
+  --chart-1: #E3C67A; /* Champagne gold */
+  --chart-2: #CBD5E1; /* Soft gray-blue */
+  --chart-3: #94A3B8; /* Cool mid-gray */
+  --chart-4: #475569; /* Slate blue-gray */
+  --chart-5: #1E293B; /* Deep slate for contrast */
 
   --radius: 0.5rem;
 
-  /* Sidebar tones */
-  --sidebar: #0C0C0C;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-primary: #0D0D0D;
-  --sidebar-primary-foreground: #E3C67A;
-  --sidebar-accent: #E3C67A;
-  --sidebar-accent-foreground: #0A0A0A;
-  --sidebar-border: #1A1A1A;
-  --sidebar-ring: rgba(227,198,122,0.18);
+  /* Sidebar */
+  --sidebar: #FFFFFF; /* Sidebar background */
+  --sidebar-foreground: #1E293B; /* Sidebar text */
+  --sidebar-primary: #F9FAFB; /* Primary sidebar background */
+  --sidebar-primary-foreground: #E3C67A; /* Gold highlight */
+  --sidebar-accent: #E3C67A; /* Accent items */
+  --sidebar-accent-foreground: #1E293B; /* Text on accent */
+  --sidebar-border: #CBD5E1; /* Sidebar border */
+  --sidebar-ring: rgba(227,198,122,0.18); /* Focus ring */
 
   /* Link color */
-  --link-text: #EDEDED; /* Slightly cooler white for links */
+  --link-text: #1E293B; /* Dark blue-gray links */
 }
+
 
 /* EDIT: Replaced .dark variables with deeper/richer variants of the palette */
 .dark {
