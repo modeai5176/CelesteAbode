@@ -58,8 +58,8 @@ export function HeroSection() {
               className={
                 "block text-white whitespace-nowrap"
               } /*prevent wrapping so this phrase stays on one line */
-              fromFontVariationSettings={"'wght' 400, 'opsz' 9"}
-              toFontVariationSettings={"'wght' 900, 'opsz' 40"}
+              fromFontVariationSettings={"'wght' 700, 'opsz' 9"}
+              toFontVariationSettings={"'wght' 1000, 'opsz' 40"}
               containerRef={containerRef}
               radius={140}
               falloff="linear"
@@ -69,14 +69,15 @@ export function HeroSection() {
             />
             <VariableProximity
               label={"Masterpieces of Living"}
-              className={"block text-secondary mt-1"}
-              fromFontVariationSettings={"'wght' 400, 'opsz' 9"}
-              toFontVariationSettings={"'wght' 900, 'opsz' 40"}
+              className={"block text-primary-foreground mt-1"}
+              fromFontVariationSettings={"'wght' 700, 'opsz' 9"}
+              toFontVariationSettings={"'wght' 1000, 'opsz' 40"}
               containerRef={containerRef}
               radius={140}
               falloff="linear"
               style={{
                 fontFamily: "inherit",
+                color: "#D4B16A",
               }} /* EDIT: inherit existing font-family */
             />
           </div>

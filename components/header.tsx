@@ -47,12 +47,12 @@ export function Header() {
       style={{
         height: headerHeight,
         backgroundColor: isMobile
-          ? "rgba(13,13,13,0.9)" // dark glass for mobile
+          ? "#0f1112" // match footer color for mobile
           : isHomepage && isScrolled
-          ? "rgba(13,13,13,0.72)" // dark glass when scrolled on homepage
+          ? "#0f1112" // match footer color when scrolled on homepage
           : isHomepage
           ? "transparent"
-          : "rgba(13,13,13,0.85)", // dark glass for internal pages
+          : "#0f1112", // match footer color for internal pages
         // EDIT: Use existing blur values but keep dark glass look
         backdropFilter: isMobile
           ? "blur(8px)"
@@ -100,97 +100,55 @@ export function Header() {
         </Link>
 
         {/* Navigation */}
-        {/* EDIT: nav background for homepage changed to use card-based translucent bg */}
-        <nav
-          className={`hidden md:flex items-center rounded-full px-2 py-3 border transition-all duration-300 ${
-            isHomepage && isScrolled
-              ? "bg-muted/30 border-black/20"
-              : isHomepage
-              ? "bg-card/20 border-border/40"
-              : "bg-muted/30 border-black/20"
-          }`}
-        >
+        <nav className="hidden md:flex items-center space-x-12">
           <Link
             href="/"
-            className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
-              isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-                : isHomepage
-                ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-            }`}
+            className="text-lg font-medium text-white hover:text-white transition-all duration-300 relative group py-2"
           >
-            Home
+            HOME
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
             href="/philosophy"
-            className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
-              isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-                : isHomepage
-                ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-            }`}
+            className="text-lg font-medium text-white hover:text-white transition-all duration-300 relative group py-2"
           >
-            Philosophy
+            PHILOSOPHY
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
             href="/services"
-            className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
-              isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-                : isHomepage
-                ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-            }`}
+            className="text-lg font-medium text-white hover:text-white transition-all duration-300 relative group py-2"
           >
-            Services
+            SERVICES
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
             href="/properties"
-            className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
-              isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-                : isHomepage
-                ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-            }`}
+            className="text-lg font-medium text-white hover:text-white transition-all duration-300 relative group py-2"
           >
-            Properties
+            PROPERTIES
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
           <Link
             href="/contact"
-            className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
-              isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-                : isHomepage
-                ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
-            }`}
+            className="text-lg font-medium text-white hover:text-white transition-all duration-300 relative group py-2"
           >
-            Contact
+            CONTACT
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
           </Link>
         </nav>
-
-        {/* Desktop CTA */}
-        <Button
-          asChild
-          className="hidden md:flex bg-primary hover:bg-primary/90 text-primary-foreground px-4 md:px-6 py-2 rounded-full button-text transition-all duration-300 hover:scale-105 hover:shadow-lg"
-        >
-          <Link href="/contact">Book Consultation</Link>
-        </Button>
 
         {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="sm"
-          className="md:hidden p-4 mr-2"
+          className="md:hidden p-4"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <X className="w-7 h-7" />
+            <X className="w-7 h-7 text-white" />
           ) : (
-            <Menu className="w-7 h-7" />
+            <Menu className="w-7 h-7 text-white" />
           )}
         </Button>
       </div>
@@ -201,59 +159,49 @@ export function Header() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 md:hidden"
+          className="absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-b border-white/10 md:hidden"
         >
-          <nav className="px-6 py-4 space-y-4">
+          <nav className="px-6 py-4 space-y-6">
             <Link
               href="/"
-              className="block nav-text text-foreground/80 hover:text-foreground transition-colors py-2"
+              className="block text-lg font-medium text-white hover:text-white transition-colors py-3 relative group"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Home
+              HOME
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="/philosophy"
-              className="block nav-text text-foreground/80 hover:text-foreground transition-colors py-2"
+              className="block text-lg font-medium text-white hover:text-white transition-colors py-3 relative group"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Philosophy
+              PHILOSOPHY
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="/services"
-              className="block nav-text text-foreground/80 hover:text-foreground transition-colors py-2"
+              className="block text-lg font-medium text-white hover:text-white transition-colors py-3 relative group"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Services
+              SERVICES
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="/properties"
-              className="block nav-text text-foreground/80 hover:text-foreground transition-colors py-2"
+              className="block text-lg font-medium text-white hover:text-white transition-colors py-3 relative group"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Properties
+              PROPERTIES
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
             <Link
               href="/contact"
-              className="block nav-text text-foreground/80 hover:text-foreground transition-colors py-2"
+              className="block text-lg font-medium text-white hover:text-white transition-colors py-3 relative group"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contact
+              CONTACT
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
             </Link>
-
-            {/* Mobile CTA Button */}
-            <div className="pt-4 border-t border-border/50">
-              <Button
-                asChild
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-full button-text transition-all duration-300"
-              >
-                <Link
-                  href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Book Consultation
-                </Link>
-              </Button>
-            </div>
           </nav>
         </motion.div>
       )}

@@ -1,22 +1,33 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { X, Calendar, Clock, MapPin, Loader2 } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { X, Calendar, Clock, MapPin, Loader2 } from "lucide-react";
 
 interface ContactPopupProps {
-  isOpen: boolean
-  onClose: () => void
-  propertyTitle?: string
-  propertyLocation?: string
+  isOpen: boolean;
+  onClose: () => void;
+  propertyTitle?: string;
+  propertyLocation?: string;
 }
 
-export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation }: ContactPopupProps) {
+export function ContactPopup({
+  isOpen,
+  onClose,
+  propertyTitle,
+  propertyLocation,
+}: ContactPopupProps) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -25,14 +36,16 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
     preferredDate: "",
     preferredTime: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
 
     try {
       const data = {
@@ -43,24 +56,27 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
         preferredDate: formData.preferredDate,
         preferredTime: formData.preferredTime,
         message: formData.message,
-        propertyTitle: propertyTitle || '',
-        propertyLocation: propertyLocation || ''
-      }
+        propertyTitle: propertyTitle || "",
+        propertyLocation: propertyLocation || "",
+      };
 
-      const response = await fetch('/api/viewing', {
-        method: 'POST',
+      const response = await fetch("/api/viewing", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
+      });
 
       if (response.ok) {
-        const result = await response.json()
+        const result = await response.json();
         if (result.success) {
-          setSubmitStatus('success')
-          console.log("Viewing request submitted successfully:", result.messageId)
-          
+          setSubmitStatus("success");
+          console.log(
+            "Viewing request submitted successfully:",
+            result.messageId
+          );
+
           // Reset form and close after success
           setTimeout(() => {
             setFormData({
@@ -71,50 +87,52 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
               preferredDate: "",
               preferredTime: "",
               message: "",
-            })
-            onClose()
-            setSubmitStatus('idle')
-          }, 1500)
+            });
+            onClose();
+            setSubmitStatus("idle");
+          }, 1500);
         } else {
-          console.error('Form submission error:', result.error)
-          setSubmitStatus('error')
+          console.error("Form submission error:", result.error);
+          setSubmitStatus("error");
         }
       } else {
-        console.error('HTTP error:', response.status)
-        setSubmitStatus('error')
+        console.error("HTTP error:", response.status);
+        setSubmitStatus("error");
       }
     } catch (error) {
-      setSubmitStatus('error')
-      console.error('Form submission error:', error)
+      setSubmitStatus("error");
+      console.error("Form submission error:", error);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   const handleSelectChange = (name: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
-  if (!isOpen) return null
+  if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/60 backdrop-blur-md"
         onClick={onClose}
       />
-      
+
       {/* Popup */}
       <Card className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto border-0 shadow-2xl">
         <CardHeader className="border-b bg-gradient-to-r from-primary/5 to-secondary/5">
@@ -127,7 +145,9 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                 <CardTitle className="text-2xl font-semibold text-primary">
                   Schedule Property Viewing
                 </CardTitle>
-                <p className="text-sm text-muted-foreground">Book your personalized tour</p>
+                <p className="text-sm text-muted-foreground">
+                  Book your personalized tour
+                </p>
               </div>
             </div>
             <Button
@@ -139,14 +159,16 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
               <X className="h-5 w-5" />
             </Button>
           </div>
-          
+
           {propertyTitle && (
             <div className="mt-6 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border border-primary/20">
               <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                <MapPin className="h-4 w-4 text-secondary" />
+                <MapPin className="h-4 w-4 text-primary" />
                 {propertyLocation}
               </div>
-              <h3 className="font-semibold text-foreground text-lg">{propertyTitle}</h3>
+              <h3 className="font-semibold text-foreground text-lg">
+                {propertyTitle}
+              </h3>
             </div>
           )}
         </CardHeader>
@@ -159,12 +181,19 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                 <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
                   <span className="text-primary font-semibold text-sm">1</span>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Personal Information</h3>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Personal Information
+                </h3>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
-                  <Label htmlFor="firstName" className="text-sm font-medium text-foreground">First Name *</Label>
+                  <Label
+                    htmlFor="firstName"
+                    className="text-sm font-medium text-foreground"
+                  >
+                    First Name *
+                  </Label>
                   <Input
                     id="firstName"
                     name="firstName"
@@ -175,9 +204,14 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                     className="h-12 border-2 border-border focus:border-primary transition-colors duration-200"
                   />
                 </div>
-                
+
                 <div className="space-y-3">
-                  <Label htmlFor="lastName" className="text-sm font-medium text-foreground">Last Name *</Label>
+                  <Label
+                    htmlFor="lastName"
+                    className="text-sm font-medium text-foreground"
+                  >
+                    Last Name *
+                  </Label>
                   <Input
                     id="lastName"
                     name="lastName"
@@ -192,7 +226,12 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
-                  <Label htmlFor="email" className="text-sm font-medium text-foreground">Email Address *</Label>
+                  <Label
+                    htmlFor="email"
+                    className="text-sm font-medium text-foreground"
+                  >
+                    Email Address *
+                  </Label>
                   <Input
                     id="email"
                     name="email"
@@ -204,9 +243,14 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                     className="h-12 border-2 border-border focus:border-primary transition-colors duration-200"
                   />
                 </div>
-                
+
                 <div className="space-y-3">
-                  <Label htmlFor="phone" className="text-sm font-medium text-foreground">Phone Number *</Label>
+                  <Label
+                    htmlFor="phone"
+                    className="text-sm font-medium text-foreground"
+                  >
+                    Phone Number *
+                  </Label>
                   <Input
                     id="phone"
                     name="phone"
@@ -224,15 +268,22 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
             {/* Preferred Viewing Time */}
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center">
-                  <span className="text-secondary font-semibold text-sm">2</span>
+                <div className="w-8 h-8 bg-primary/15 border border-primary/20 rounded-lg flex items-center justify-center">
+                  <span className="text-primary font-semibold text-sm">2</span>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Preferred Viewing Time</h3>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Preferred Viewing Time
+                </h3>
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-3">
-                  <Label htmlFor="preferredDate" className="text-sm font-medium text-foreground">Preferred Date *</Label>
+                  <Label
+                    htmlFor="preferredDate"
+                    className="text-sm font-medium text-foreground"
+                  >
+                    Preferred Date *
+                  </Label>
                   <Input
                     id="preferredDate"
                     name="preferredDate"
@@ -240,16 +291,23 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                     value={formData.preferredDate}
                     onChange={handleChange}
                     required
-                    min={new Date().toISOString().split('T')[0]}
+                    min={new Date().toISOString().split("T")[0]}
                     className="h-12 border-2 border-border focus:border-secondary transition-colors duration-200"
                   />
                 </div>
-                
+
                 <div className="space-y-3">
-                  <Label htmlFor="preferredTime" className="text-sm font-medium text-foreground">Preferred Time *</Label>
+                  <Label
+                    htmlFor="preferredTime"
+                    className="text-sm font-medium text-foreground"
+                  >
+                    Preferred Time *
+                  </Label>
                   <Select
                     value={formData.preferredTime}
-                    onValueChange={(value) => handleSelectChange("preferredTime", value)}
+                    onValueChange={(value) =>
+                      handleSelectChange("preferredTime", value)
+                    }
                   >
                     <SelectTrigger className="h-12 border-2 border-border focus:border-secondary transition-colors duration-200">
                       <SelectValue placeholder="Select preferred time" />
@@ -276,11 +334,18 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                 <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center">
                   <span className="text-accent font-semibold text-sm">3</span>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Additional Information</h3>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Additional Information
+                </h3>
               </div>
-              
+
               <div className="space-y-3">
-                <Label htmlFor="message" className="text-sm font-medium text-foreground">Special Requirements or Questions</Label>
+                <Label
+                  htmlFor="message"
+                  className="text-sm font-medium text-foreground"
+                >
+                  Special Requirements or Questions
+                </Label>
                 <Textarea
                   id="message"
                   name="message"
@@ -315,20 +380,21 @@ export function ContactPopup({ isOpen, onClose, propertyTitle, propertyLocation 
                     Scheduling...
                   </>
                 ) : (
-                  'Schedule Viewing'
+                  "Schedule Viewing"
                 )}
               </Button>
             </div>
-            
+
             {/* Status Messages */}
-            {submitStatus === 'success' && (
+            {submitStatus === "success" && (
               <div className="text-center text-green-600 text-sm bg-green-50 p-3 rounded-lg border border-green-200">
-                ✅ Viewing scheduled successfully! We'll contact you within 2 hours to confirm.
+                ✅ Viewing scheduled successfully! We'll contact you within 2
+                hours to confirm.
               </div>
             )}
           </form>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

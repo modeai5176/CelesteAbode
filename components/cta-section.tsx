@@ -28,7 +28,7 @@ export function CTASection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm">
           <a
             href="tel:+919818735258"
-            className="flex items-center gap-2 hover:text-secondary transition-colors"
+            className="flex items-center gap-2 hover:text-primary transition-colors"
           >
             <Phone className="w-4 h-4" />
             <span>+91 9818735258</span>
@@ -37,7 +37,7 @@ export function CTASection() {
             href={`mailto:${
               process.env.NEXT_PUBLIC_APP_EMAIL || "celesteabode@gmail.com"
             }`}
-            className="flex items-center gap-2 hover:text-secondary transition-colors"
+            className="flex items-center gap-2 hover:text-primary transition-colors"
           >
             <Mail className="w-4 h-4" />
             <span>

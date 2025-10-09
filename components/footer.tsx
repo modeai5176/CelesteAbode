@@ -42,7 +42,9 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Contact Column */}
           <div>
-            <h3 className="h4 mb-6">Contact</h3>
+            <h3 className="h4 mb-6" style={{ color: "#D4B16A" }}>
+              Contact
+            </h3>
             <div className="space-y-4">
               <div className="flex items-center gap-3 group cursor-pointer">
                 <Phone className="w-5 h-5 text-white group-hover:text-primary transition-colors" />{" "}
@@ -76,7 +78,9 @@ export function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="h4 mb-6">Quick Links</h3>
+            <h3 className="h4 mb-6" style={{ color: "#D4B16A" }}>
+              Quick Links
+            </h3>
             <div className="space-y-3">
               <Link
                 href="/"
@@ -113,7 +117,9 @@ export function Footer() {
 
           {/* Social & Newsletter Column */}
           <div>
-            <h3 className="h4 mb-6">Social & Newsletter</h3>
+            <h3 className="h4 mb-6" style={{ color: "#D4B16A" }}>
+              Social & Newsletter
+            </h3>
             <div className="space-y-6">
               {/* Social Links */}
               <div className="flex gap-4">
@@ -146,7 +152,9 @@ export function Footer() {
 
               {/* Newsletter */}
               <div>
-                <h4 className="h4 mb-3">Stay Updated</h4>
+                <h4 className="h4 mb-3" style={{ color: "#D4B16A" }}>
+                  Stay Updated
+                </h4>
                 <form onSubmit={handleSubscribe} className="space-y-3">
                   <div className="flex gap-2">
                     <Input
@@ -190,7 +198,7 @@ export function Footer() {
 
         {/* Legal Links */}
         {/* EDIT: adjusted top border to use border-border/40 to better suit the new footer background */}
-        <div className="border-t border-border/40 pt-8">
+        <div className="border-t border-white/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-primary">
               {" "}

@@ -3,108 +3,110 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* EDIT: imported Montserrat Bold for headings */
+/* Import Satoshi Font from Fontshare */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap&text=CelesteAbodeRealEstateLuxuryPropertiesPhilosophyServicesContactBookConsultationMasterpiecesLivingExplorePropertiesWhatOurClientsSayGetInTouchOurPhilosophyServicesAtCelesteAbodeExplorePremiumProperties') layer(fonts);
 
-/* Sophisticated luxury color palette with elegant blues and neutral tones */
+/* Sophisticated luxury color palette with warm neutrals and gold accents */
 :root {
-  /* Dark luxury palette (user update) */
-  --background: #0A0A0A; /* Deep velvet black */
-  --foreground: #F5F5F5; /* Body paragraph text (soft white) */
-  --card: #0D0D0D; /* Slightly lighter card surface */
-  --card-foreground: #F5F5F5;
-  --popover: #0D0D0D;
-  --popover-foreground: #F5F5F5;
+  /* Light background */
+  --background: #F8F5EF; /* Ivory / Cream Background */
+  --foreground: #2E2E2E; /* Dark Charcoal (Main Heading Text) */
+  --card: #FFFFFF; /* White (Header & Cards Background) */
+  --card-foreground: #5E5E5E; /* Warm Gray Text */
+  --popover: #FFFFFF; /* Popover background */
+  --popover-foreground: #5E5E5E; /* Popover text */
 
-  /* Champagne gold for headings/tagline */
-  --primary: #E3C67A; /* Champagne gold */
-  --primary-foreground: #0A0A0A; /* dark text on gold */
-  --secondary: #D9B86A; /* slightly muted gold */
-  --secondary-foreground: #0A0A0A;
+  /* Primary / Accent */
+  --primary: #D4B16A; /* Gold Highlight (Buttons & Links) */
+  --primary-foreground: #FFFFFF; /* Text on gold elements */
+  --secondary: #EDE3D7; /* Soft Beige Accent */
+  --secondary-foreground: #2E2E2E; /* Text on secondary accents */
+  --accent: #D4B16A; /* Accent / hover elements */
+  --accent-foreground: #FFFFFF;
 
-  --muted: #121212; /* toned down muted surface */
-  --muted-foreground: rgba(245,245,245,0.72);
-  --accent: #E3C67A;
-  --accent-foreground: #0A0A0A;
-  --neutral-blue: #0F0F0F;
-  --neutral-blue-foreground: #F5F5F5;
+  /* Muted / Neutral */
+  --muted: #EDE3D7; /* Soft Beige Accent */
+  --muted-foreground: #5E5E5E; /* Warm Gray Text */
+  --neutral-blue: #F8F5EF; /* Ivory / Cream Background */
+  --neutral-blue-foreground: #2E2E2E;
 
-  /* Other utility colors */
-  --destructive: #c94b4b;
-  --destructive-foreground: #FFFFFF;
-  --border: #1A1A1A; /* soft dark border */
-  --input: #0D0D0D;
-  --ring: rgba(227,198,122,0.25); /* gold ring (rgba of #E3C67A) */
+  /* Utility colors */
+  --destructive: #C94B4B; /* Error / warning red */
+  --destructive-foreground: #FFFFFF; /* Text on red alerts */
+  --border: #EDE3D7; /* Soft Beige borders */
+  --input: #FFFFFF; /* Input backgrounds */
+  --ring: rgba(212,177,106,0.25); /* Semi-transparent gold focus ring */
 
-  /* Charts — tonal variations based on the palette */
-  --chart-1: #E3C67A;
-  --chart-2: #D9B86A;
-  --chart-3: #A98E4B;
-  --chart-4: #7A6236;
-  --chart-5: #4E391F;
+  /* Chart colors */
+  --chart-1: #D4B16A; /* Gold Highlight */
+  --chart-2: #EDE3D7; /* Soft Beige Accent */
+  --chart-3: #5E5E5E; /* Warm Gray Text */
+  --chart-4: #2E2E2E; /* Dark Charcoal */
+  --chart-5: #F8F5EF; /* Ivory / Cream */
 
   --radius: 0.5rem;
 
-  /* Sidebar tones */
-  --sidebar: #0C0C0C;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-primary: #0D0D0D;
-  --sidebar-primary-foreground: #E3C67A;
-  --sidebar-accent: #E3C67A;
-  --sidebar-accent-foreground: #0A0A0A;
-  --sidebar-border: #1A1A1A;
-  --sidebar-ring: rgba(227,198,122,0.18);
+  /* Sidebar */
+  --sidebar: #FFFFFF; /* White sidebar background */
+  --sidebar-foreground: #2E2E2E; /* Dark Charcoal sidebar text */
+  --sidebar-primary: #F8F5EF; /* Ivory / Cream primary sidebar background */
+  --sidebar-primary-foreground: #D4B16A; /* Gold highlight */
+  --sidebar-accent: #D4B16A; /* Accent items */
+  --sidebar-accent-foreground: #FFFFFF; /* Text on accent */
+  --sidebar-border: #EDE3D7; /* Soft Beige border */
+  --sidebar-ring: rgba(212,177,106,0.18); /* Focus ring */
 
   /* Link color */
-  --link-text: #EDEDED; /* Slightly cooler white for links */
+  --link-text: #2E2E2E; /* Dark Charcoal links */
 }
 
-/* EDIT: Replaced .dark variables with deeper/richer variants of the palette */
-.dark {
-  /* Deeper, richer dark variants tuned to the new palette */
-  --background: #050505; /* almost-black for deeper mode */
-  --foreground: #F5F5F5;
-  --card: #0A0A0A; /* match base velvet black */
-  --card-foreground: #F5F5F5;
-  --popover: #0A0A0A;
-  --popover-foreground: #F5F5F5;
 
-  --primary: #C9B36B; /* slightly darker champagne gold */
-  --primary-foreground: #050505;
-  --secondary: #BDA55F;
-  --secondary-foreground: #050505;
-  --muted: #080808;
-  --muted-foreground: rgba(245,245,245,0.72);
-  --accent: #C9B36B;
-  --accent-foreground: #050505;
-  --neutral-blue: #0A0A0A;
-  --neutral-blue-foreground: #F5F5F5;
+/* Dark mode with warm dark variants of the new palette */
+.dark {
+  /* Dark variants using warm dark tones */
+  --background: #1A1A1A; /* Warm dark background */
+  --foreground: #F8F5EF; /* Ivory text on dark */
+  --card: #2A2A2A; /* Warm dark card */
+  --card-foreground: #F8F5EF;
+  --popover: #2A2A2A;
+  --popover-foreground: #F8F5EF;
+
+  --primary: #D4B16A; /* Same gold highlight */
+  --primary-foreground: #1A1A1A; /* Dark text on gold */
+  --secondary: #3A3A3A; /* Darker warm gray */
+  --secondary-foreground: #F8F5EF;
+  --muted: #2A2A2A; /* Warm dark muted */
+  --muted-foreground: rgba(248,245,239,0.72);
+  --accent: #D4B16A; /* Same gold accent */
+  --accent-foreground: #1A1A1A;
+  --neutral-blue: #1A1A1A;
+  --neutral-blue-foreground: #F8F5EF;
 
   --destructive: #a33f3f;
   --destructive-foreground: #FFFFFF;
-  --border: #0F0F0F; /* darker border */
-  --input: #0A0A0A;
-  --ring: rgba(227,198,122,0.32);
+  --border: #3A3A3A; /* Warm dark border */
+  --input: #2A2A2A;
+  --ring: rgba(212,177,106,0.32);
 
-  --chart-1: #C9B36B;
-  --chart-2: #BDA55F;
-  --chart-3: #8f7a40;
-  --chart-4: #6f5b33;
-  --chart-5: #4f3f24;
+  --chart-1: #D4B16A; /* Gold */
+  --chart-2: #EDE3D7; /* Soft Beige */
+  --chart-3: #5E5E5E; /* Warm Gray */
+  --chart-4: #2E2E2E; /* Dark Charcoal */
+  --chart-5: #F8F5EF; /* Ivory */
 
-  --sidebar: #050505;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-primary: #0A0A0A;
-  --sidebar-primary-foreground: #C9B36B;
-  --sidebar-accent: #C9B36B;
-  --sidebar-accent-foreground: #050505;
-  --sidebar-border: #0F0F0F;
-  --sidebar-ring: rgba(227,198,122,0.28);
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #F8F5EF;
+  --sidebar-primary: #2A2A2A;
+  --sidebar-primary-foreground: #D4B16A;
+  --sidebar-accent: #D4B16A;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #3A3A3A;
+  --sidebar-ring: rgba(212,177,106,0.28);
 }
 
 @theme inline {
-  --font-sans: var(--font-sans);
+  --font-sans: "Satoshi", system-ui, sans-serif;
+  --font-serif: "Satoshi", system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -158,7 +160,7 @@
   
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 400;
     line-height: 1.6;
     font-size: 16px;
@@ -166,37 +168,37 @@
   
   /* Heading Typography */
   h1, .h1 {
-    font-family: 'Montserrat', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* EDIT: headings use Montserrat Bold */
-    font-weight: 700; /* EDIT: Montserrat Bold */
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
     font-size: clamp(36px, 5vw, 64px);
     line-height: 1.2;
-    letter-spacing: 0.06em; /* EDIT: increase letter-spacing for ALL-CAPS headings */
-    text-transform: uppercase; /* EDIT: headings set to ALL CAPS */
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     text-wrap: balance;
   }
   
   h2, .h2 {
-    font-family: 'Montserrat', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* EDIT: headings use Montserrat Bold */
-    font-weight: 700; /* EDIT: use bold weight for Montserrat */
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
     font-size: clamp(28px, 3vw, 36px);
     line-height: 1.2;
-    letter-spacing: 0.05em; /* EDIT: slight tracking for ALL-CAPS */
-    text-transform: uppercase; /* EDIT: headings set to ALL CAPS */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     text-wrap: balance;
   }
   
   h3, .h3, h4, .h4 {
-    font-family: 'Montserrat', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* EDIT: headings use Montserrat Bold */
-    font-weight: 700; /* EDIT: Montserrat Bold for h3/h4 too */
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
     font-size: clamp(20px, 2.5vw, 24px);
     line-height: 1.25;
-    letter-spacing: 0.04em; /* EDIT: tracking for ALL-CAPS */
-    text-transform: uppercase; /* EDIT: headings set to ALL CAPS */
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
   
   /* Body Text */
   p, .body-text {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 400;
     font-size: clamp(16px, 1.1vw, 18px);
     line-height: 1.6;
@@ -206,7 +208,7 @@
   
   /* Navigation & Kickers */
   .nav-text, .kicker {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.4;
@@ -216,7 +218,7 @@
   
   /* Quotes & Pull Quotes */
   blockquote, .quote, .pull-quote {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-style: italic;
     font-weight: 400;
     line-height: 1.6;
@@ -230,7 +232,7 @@
   
   /* Lead Text */
   .lead {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 400;
     font-size: clamp(18px, 1.3vw, 20px);
     line-height: 1.6;
@@ -239,13 +241,13 @@
   
   /* UI Elements */
   .ui-text {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 500;
   }
   
   /* Button Text */
   .button-text {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
   }

@@ -1,24 +1,36 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { useState } from "react"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ContactPopup } from "@/components/contact-popup"
-import { MapPin, Bed, Bath, Square, Eye, Play, Star, Building2 } from "lucide-react"
+import Image from "next/image";
+import { useState } from "react";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { ContactPopup } from "@/components/contact-popup";
+import {
+  MapPin,
+  Bed,
+  Bath,
+  Square,
+  Eye,
+  Play,
+  Star,
+  Building2,
+} from "lucide-react";
 
 export default function PropertiesPage() {
-  const [activeFilter, setActiveFilter] = useState("All")
-  const [isPopupOpen, setIsPopupOpen] = useState(false)
-  const [selectedProperty, setSelectedProperty] = useState<{ title: string; location: string } | null>(null)
-  const filters = ["All", "Villas", "Apartments"]
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState<{
+    title: string;
+    location: string;
+  } | null>(null);
+  const filters = ["All", "Villas", "Apartments"];
 
   const handleFilterChange = (filter: string) => {
-    setActiveFilter(filter)
-  }
+    setActiveFilter(filter);
+  };
 
   const properties = [
     {
@@ -36,10 +48,15 @@ export default function PropertiesPage() {
       featured: true,
       status: "Pre-Launch Offer",
       developer: "Renowned Group",
-      highlights: ["Pre-Launch Price", "Limited Units", "GDA Approved", "Forest Living"],
+      highlights: [
+        "Pre-Launch Price",
+        "Limited Units",
+        "GDA Approved",
+        "Forest Living",
+      ],
       video: "/ForestWalk/PropertyLocationVideo.mp4",
       lifestyleVideo: "/ForestWalk/Property_futurelifestule_videos.mp4",
-      mockup: "/ForestWalk/VillabuiltMockup.jpeg"
+      mockup: "/ForestWalk/VillabuiltMockup.jpeg",
     },
     {
       id: 2,
@@ -56,13 +73,18 @@ export default function PropertiesPage() {
       featured: true,
       status: "Under Construction",
       developer: "County Group",
-      highlights: ["Prime Location", "Premium Amenities", "County Group", "Ready to Move"],
+      highlights: [
+        "Prime Location",
+        "Premium Amenities",
+        "County Group",
+        "Ready to Move",
+      ],
       amenities: [
         "/IvoryCounty/SportsANDbarArea.png",
         "/IvoryCounty/GardenArea.png",
         "/IvoryCounty/FluidRestro.png",
-        "/IvoryCounty/FlatsInsideAesthetic.png"
-      ]
+        "/IvoryCounty/FlatsInsideAesthetic.png",
+      ],
     },
     {
       id: 3,
@@ -79,13 +101,18 @@ export default function PropertiesPage() {
       featured: true,
       status: "Under Construction",
       developer: "MAX ESTATES GROUP",
-      highlights: ["Antara Partnership", "Exclusive Design", "Prime Location", "Luxury Amenities"],
+      highlights: [
+        "Antara Partnership",
+        "Exclusive Design",
+        "Prime Location",
+        "Luxury Amenities",
+      ],
       amenities: [
         "/ESTATE360/TheHub.png",
         "/ESTATE360/LagoonPool.png",
         "/ESTATE360/SerpentineLake.png",
-        "/ESTATE360/WraparoundBalcony.png"
-      ]
+        "/ESTATE360/WraparoundBalcony.png",
+      ],
     },
     {
       id: 4,
@@ -102,13 +129,18 @@ export default function PropertiesPage() {
       featured: true,
       status: "Under Construction",
       developer: "CRC Group",
-      highlights: ["Club Maesta", "Premium Location", "CRC Legacy", "Luxury Finishes"],
+      highlights: [
+        "Club Maesta",
+        "Premium Location",
+        "CRC Legacy",
+        "Luxury Finishes",
+      ],
       amenities: [
         "/CRCMaesta/PoolandClubDroneShot.png",
         "/CRCMaesta/WellNessZone.png",
         "/CRCMaesta/MiniTheater.png",
-        "/CRCMaesta/FamilyLounge.png"
-      ]
+        "/CRCMaesta/FamilyLounge.png",
+      ],
     },
     {
       id: 5,
@@ -125,13 +157,18 @@ export default function PropertiesPage() {
       featured: true,
       status: "Under Construction",
       developer: "Premium Developer",
-      highlights: ["Skyline Views", "Green Belt Facing", "EV Charging", "25K sq.ft. Clubhouse"],
+      highlights: [
+        "Skyline Views",
+        "Green Belt Facing",
+        "EV Charging",
+        "25K sq.ft. Clubhouse",
+      ],
       amenities: [
         "/Eternia/2.png",
         "/Eternia/3.png",
         "/Eternia/4.png",
-        "/Eternia/5.png"
-      ]
+        "/Eternia/5.png",
+      ],
     },
     {
       id: 6,
@@ -148,18 +185,25 @@ export default function PropertiesPage() {
       featured: true,
       status: "Under Construction",
       developer: "Renowned Developer",
-      highlights: ["3-Side Open Plot", "Earthquake Resistant", "EV Charging", "30,750 sq.ft. Clubhouses"],
+      highlights: [
+        "3-Side Open Plot",
+        "Earthquake Resistant",
+        "EV Charging",
+        "30,750 sq.ft. Clubhouses",
+      ],
       amenities: [
         "/Brook and Rivulet/2.png",
         "/Brook and Rivulet/3.png",
         "/Brook and Rivulet/4.png",
-        "/Brook and Rivulet/5.png"
-      ]
-    }
-  ]
+        "/Brook and Rivulet/5.png",
+      ],
+    },
+  ];
 
   const filteredProperties =
-    activeFilter === "All" ? properties : properties.filter((property) => property.type === activeFilter)
+    activeFilter === "All"
+      ? properties
+      : properties.filter((property) => property.type === activeFilter);
 
   return (
     <div className="min-h-screen bg-background">
@@ -169,14 +213,15 @@ export default function PropertiesPage() {
         {/* Hero Section */}
         <section className="pt-0 pb-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="max-w-6xl mx-auto text-center pt-32">
-            <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-primary/15 text-primary border border-primary/20 rounded-full text-sm font-medium mb-4">
               Properties
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-              Explore <span className="text-secondary">Premium Properties</span>
+              Explore <span className="text-primary">Premium Properties</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Discover exceptional real estate projects that redefine luxury living and investment opportunities.
+              Discover exceptional real estate projects that redefine luxury
+              living and investment opportunities.
             </p>
 
             {/* Filter Buttons */}
@@ -186,7 +231,9 @@ export default function PropertiesPage() {
                   key={filter}
                   variant={activeFilter === filter ? "default" : "outline"}
                   className={
-                    activeFilter === filter ? "pill-button bg-secondary hover:bg-secondary/90 text-white" : "pill-button"
+                    activeFilter === filter
+                      ? "pill-button bg-primary hover:bg-primary/90 text-white"
+                      : "pill-button bg-secondary hover:bg-secondary/80 text-foreground border-secondary"
                   }
                   onClick={() => handleFilterChange(filter)}
                 >
@@ -217,19 +264,19 @@ export default function PropertiesPage() {
                       quality={90}
                       loading="lazy"
                     />
-                    
+
                     {/* Status Badge */}
                     <Badge className="absolute top-3 left-3 bg-secondary text-white text-xs">
                       {property.status}
                     </Badge>
-                    
+
                     {/* Featured Badge */}
                     {property.featured && (
                       <Badge className="absolute top-3 right-3 bg-primary text-white text-xs">
                         Featured
                       </Badge>
                     )}
-                    
+
                     {/* Developer Badge */}
                     <div className="absolute bottom-3 left-3">
                       <span className="bg-white/90 text-primary px-2 py-1 rounded-full text-xs font-semibold shadow-lg">
@@ -244,9 +291,13 @@ export default function PropertiesPage() {
                       <span className="line-clamp-1">{property.location}</span>
                     </div>
 
-                    <h3 className="text-lg font-semibold text-foreground mb-1 line-clamp-1">{property.title}</h3>
-                    <p className="text-secondary font-medium text-sm mb-3 line-clamp-1">{property.subtitle}</p>
-                    
+                    <h3 className="text-lg font-semibold text-foreground mb-1 line-clamp-1">
+                      {property.title}
+                    </h3>
+                    <p className="text-secondary font-medium text-sm mb-3 line-clamp-1">
+                      {property.subtitle}
+                    </p>
+
                     {property.price !== "Contact for Pricing" && (
                       <p className="text-xl font-semibold text-secondary mb-3">
                         {property.price}
@@ -270,14 +321,16 @@ export default function PropertiesPage() {
 
                     <div className="mb-4">
                       <div className="flex flex-wrap gap-2">
-                        {property.highlights.slice(0, 2).map((highlight, idx) => (
-                          <span
-                            key={idx}
-                            className="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded-full line-clamp-1"
-                          >
-                            {highlight}
-                          </span>
-                        ))}
+                        {property.highlights
+                          .slice(0, 2)
+                          .map((highlight, idx) => (
+                            <span
+                              key={idx}
+                              className="text-xs bg-primary/15 text-primary border border-primary/20 px-2 py-1 rounded-full line-clamp-1"
+                            >
+                              {highlight}
+                            </span>
+                          ))}
                         {property.highlights.length > 2 && (
                           <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
                             +{property.highlights.length - 2} more
@@ -287,23 +340,25 @@ export default function PropertiesPage() {
                     </div>
 
                     <div className="flex gap-3 mt-auto">
-                      <Button 
+                      <Button
                         className="flex-1 bg-secondary hover:bg-secondary/90 text-white text-sm py-2 rounded-full"
                         onClick={() => {
                           setSelectedProperty({
                             title: property.title,
-                            location: property.location
-                          })
-                          setIsPopupOpen(true)
+                            location: property.location,
+                          });
+                          setIsPopupOpen(true);
                         }}
                       >
                         <Eye className="w-4 h-4 mr-2" />
                         Schedule Viewing
                       </Button>
-                      <Button 
+                      <Button
                         variant="outline"
                         className="border-2 border-primary text-primary hover:bg-primary hover:text-white text-sm py-2 px-4 rounded-full"
-                        onClick={() => window.location.href = `/properties/${property.id}`}
+                        onClick={() =>
+                          (window.location.href = `/properties/${property.id}`)
+                        }
                       >
                         View Details
                       </Button>
@@ -320,8 +375,8 @@ export default function PropertiesPage() {
       <ContactPopup
         isOpen={isPopupOpen}
         onClose={() => {
-          setIsPopupOpen(false)
-          setSelectedProperty(null)
+          setIsPopupOpen(false);
+          setSelectedProperty(null);
         }}
         propertyTitle={selectedProperty?.title}
         propertyLocation={selectedProperty?.location}
@@ -329,5 +384,5 @@ export default function PropertiesPage() {
 
       <Footer />
     </div>
-  )
+  );
 }
