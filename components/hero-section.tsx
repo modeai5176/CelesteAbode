@@ -69,7 +69,7 @@ export function HeroSection() {
             />
             <VariableProximity
               label={"Masterpieces of Living"}
-              className={"block text-secondary mt-1"}
+              className={"block text-primary-foreground mt-1"}
               fromFontVariationSettings={"'wght' 700, 'opsz' 9"}
               toFontVariationSettings={"'wght' 1000, 'opsz' 40"}
               containerRef={containerRef}
@@ -77,6 +77,7 @@ export function HeroSection() {
               falloff="linear"
               style={{
                 fontFamily: "inherit",
+                color: "#E3C67A",
               }} /* EDIT: inherit existing font-family */
             />
           </div>
