@@ -3,9 +3,8 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* EDIT: imported Montserrat Bold for headings */
+/* Import Satoshi Font from Fontshare */
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap&text=CelesteAbodeRealEstateLuxuryPropertiesPhilosophyServicesContactBookConsultationMasterpiecesLivingExplorePropertiesWhatOurClientsSayGetInTouchOurPhilosophyServicesAtCelesteAbodeExplorePremiumProperties') layer(fonts);
 
 /* Sophisticated luxury color palette with warm neutrals and gold accents */
 :root {
@@ -106,7 +105,8 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-sans);
+  --font-sans: "Satoshi", system-ui, sans-serif;
+  --font-serif: "Satoshi", system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -160,7 +160,7 @@
   
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 400;
     line-height: 1.6;
     font-size: 16px;
@@ -168,37 +168,37 @@
   
   /* Heading Typography */
   h1, .h1 {
-    font-family: 'Montserrat', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* EDIT: headings use Montserrat Bold */
-    font-weight: 700; /* EDIT: Montserrat Bold */
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
     font-size: clamp(36px, 5vw, 64px);
     line-height: 1.2;
-    letter-spacing: 0.06em; /* EDIT: increase letter-spacing for ALL-CAPS headings */
-    text-transform: uppercase; /* EDIT: headings set to ALL CAPS */
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     text-wrap: balance;
   }
   
   h2, .h2 {
-    font-family: 'Montserrat', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* EDIT: headings use Montserrat Bold */
-    font-weight: 700; /* EDIT: use bold weight for Montserrat */
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
     font-size: clamp(28px, 3vw, 36px);
     line-height: 1.2;
-    letter-spacing: 0.05em; /* EDIT: slight tracking for ALL-CAPS */
-    text-transform: uppercase; /* EDIT: headings set to ALL CAPS */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     text-wrap: balance;
   }
   
   h3, .h3, h4, .h4 {
-    font-family: 'Montserrat', var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* EDIT: headings use Montserrat Bold */
-    font-weight: 700; /* EDIT: Montserrat Bold for h3/h4 too */
+    font-family: "Satoshi", system-ui, sans-serif;
+    font-weight: 700;
     font-size: clamp(20px, 2.5vw, 24px);
     line-height: 1.25;
-    letter-spacing: 0.04em; /* EDIT: tracking for ALL-CAPS */
-    text-transform: uppercase; /* EDIT: headings set to ALL CAPS */
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
   
   /* Body Text */
   p, .body-text {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 400;
     font-size: clamp(16px, 1.1vw, 18px);
     line-height: 1.6;
@@ -208,7 +208,7 @@
   
   /* Navigation & Kickers */
   .nav-text, .kicker {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 500;
     font-size: 12px;
     line-height: 1.4;
@@ -218,7 +218,7 @@
   
   /* Quotes & Pull Quotes */
   blockquote, .quote, .pull-quote {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-style: italic;
     font-weight: 400;
     line-height: 1.6;
@@ -232,7 +232,7 @@
   
   /* Lead Text */
   .lead {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 400;
     font-size: clamp(18px, 1.3vw, 20px);
     line-height: 1.6;
@@ -241,13 +241,13 @@
   
   /* UI Elements */
   .ui-text {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 500;
   }
   
   /* Button Text */
   .button-text {
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
     font-weight: 500;
     letter-spacing: 0.05em;
   }
