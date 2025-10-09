@@ -47,12 +47,12 @@ export function Header() {
       style={{
         height: headerHeight,
         backgroundColor: isMobile
-          ? "rgba(13,13,13,0.9)" // dark glass for mobile
+          ? "#0f1112" // match footer color for mobile
           : isHomepage && isScrolled
-          ? "rgba(13,13,13,0.72)" // dark glass when scrolled on homepage
+          ? "#0f1112" // match footer color when scrolled on homepage
           : isHomepage
           ? "transparent"
-          : "rgba(13,13,13,0.85)", // dark glass for internal pages
+          : "#0f1112", // match footer color for internal pages
         // EDIT: Use existing blur values but keep dark glass look
         backdropFilter: isMobile
           ? "blur(8px)"
@@ -114,10 +114,10 @@ export function Header() {
             href="/"
             className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
               isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                ? "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
                 : isHomepage
                 ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                : "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
             }`}
           >
             Home
@@ -126,10 +126,10 @@ export function Header() {
             href="/philosophy"
             className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
               isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                ? "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
                 : isHomepage
                 ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                : "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
             }`}
           >
             Philosophy
@@ -138,10 +138,10 @@ export function Header() {
             href="/services"
             className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
               isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                ? "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
                 : isHomepage
                 ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                : "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
             }`}
           >
             Services
@@ -150,10 +150,10 @@ export function Header() {
             href="/properties"
             className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
               isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                ? "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
                 : isHomepage
                 ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                : "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
             }`}
           >
             Properties
@@ -162,10 +162,10 @@ export function Header() {
             href="/contact"
             className={`nav-text transition-all duration-200 px-4 py-2 rounded-full ${
               isHomepage && isScrolled
-                ? "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                ? "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
                 : isHomepage
                 ? "text-white hover:text-white hover:scale-105"
-                : "text-foreground/80 hover:text-foreground hover:bg-muted/60 hover:scale-105"
+                : "text-white hover:text-white hover:bg-muted/60 hover:scale-105"
             }`}
           >
             Contact
