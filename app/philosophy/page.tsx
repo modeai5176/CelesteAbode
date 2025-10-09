@@ -17,11 +17,11 @@ export default function PhilosophyPage() {
         {/* Hero Section */}
         <section className="pt-0 pb-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="max-w-6xl mx-auto text-center pt-32">
-            <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-primary/15 text-primary border border-primary/20 rounded-full text-sm font-medium mb-4">
               Philosophy
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-              Our <span className="text-secondary">Philosophy</span>
+              Our <span className="text-primary">Philosophy</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               A deep dive into the principles, values, and beliefs that drive
@@ -52,7 +52,7 @@ export default function PhilosophyPage() {
             {/* Right Column - Content */}
             <div className="lg:col-span-7">
               <div className="mb-8 vertical-rhythm">
-                <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-6">
+                <div className="inline-block px-4 py-2 bg-primary/15 text-primary border border-primary/20 rounded-full text-sm font-medium mb-6">
                   Our Philosophy
                 </div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-6">

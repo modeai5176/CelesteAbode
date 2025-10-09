@@ -77,7 +77,7 @@ export function HeroSection() {
               falloff="linear"
               style={{
                 fontFamily: "inherit",
-                color: "#E3C67A",
+                color: "#D4B16A",
               }} /* EDIT: inherit existing font-family */
             />
           </div>

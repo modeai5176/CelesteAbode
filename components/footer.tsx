@@ -42,7 +42,7 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
           {/* Contact Column */}
           <div>
-            <h3 className="h4 mb-6" style={{ color: "#E3C67A" }}>
+            <h3 className="h4 mb-6" style={{ color: "#D4B16A" }}>
               Contact
             </h3>
             <div className="space-y-4">
@@ -78,7 +78,7 @@ export function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="h4 mb-6" style={{ color: "#E3C67A" }}>
+            <h3 className="h4 mb-6" style={{ color: "#D4B16A" }}>
               Quick Links
             </h3>
             <div className="space-y-3">
@@ -117,7 +117,7 @@ export function Footer() {
 
           {/* Social & Newsletter Column */}
           <div>
-            <h3 className="h4 mb-6" style={{ color: "#E3C67A" }}>
+            <h3 className="h4 mb-6" style={{ color: "#D4B16A" }}>
               Social & Newsletter
             </h3>
             <div className="space-y-6">
@@ -152,7 +152,7 @@ export function Footer() {
 
               {/* Newsletter */}
               <div>
-                <h4 className="h4 mb-3" style={{ color: "#E3C67A" }}>
+                <h4 className="h4 mb-3" style={{ color: "#D4B16A" }}>
                   Stay Updated
                 </h4>
                 <form onSubmit={handleSubscribe} className="space-y-3">

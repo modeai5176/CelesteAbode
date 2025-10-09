@@ -1,12 +1,18 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import { ContactPopup } from "@/components/contact-popup"
-import { useEffect, useRef, useState } from "react"
-import { MapPin, Play, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ContactPopup } from "@/components/contact-popup";
+import { useEffect, useRef, useState } from "react";
+import { MapPin, Play, ChevronLeft, ChevronRight } from "lucide-react";
 
 const properties = [
   {
@@ -15,7 +21,7 @@ const properties = [
     builder: "Renowned Group",
     address: "GDA Approved Location",
     image: "/ForestWalk/LandingpageVILLA.jpeg",
-    status: "Pre-Launch Offer"
+    status: "Pre-Launch Offer",
   },
   {
     id: 2,
@@ -23,7 +29,7 @@ const properties = [
     builder: "County Group",
     address: "Sector 115, Noida",
     image: "/IvoryCounty/SocietyTowersView.png",
-    status: "Under Construction"
+    status: "Under Construction",
   },
   {
     id: 3,
@@ -31,7 +37,7 @@ const properties = [
     builder: "MAX ESTATES GROUP",
     address: "36A, Dwarka Expressway, Gurgaon",
     image: "/ESTATE360/DroneViewTowers.png",
-    status: "Under Construction"
+    status: "Under Construction",
   },
   {
     id: 4,
@@ -39,7 +45,7 @@ const properties = [
     builder: "CRC Group",
     address: "Sector 1, Greater Noida West",
     image: "/CRCMaesta/TOWERVIEW.png",
-    status: "Under Construction"
+    status: "Under Construction",
   },
   {
     id: 5,
@@ -47,7 +53,7 @@ const properties = [
     builder: "Premium Developer",
     address: "Tech Zone IV, Greater Noida (W)",
     image: "/Eternia/1.png",
-    status: "Under Construction"
+    status: "Under Construction",
   },
   {
     id: 6,
@@ -55,50 +61,57 @@ const properties = [
     builder: "Renowned Developer",
     address: "Greater Noida (Prime 3-Side Open Corner Plot)",
     image: "/Brook and Rivulet/1.png",
-    status: "Under Construction"
-  }
-]
+    status: "Under Construction",
+  },
+];
 
 export function PropertiesSection() {
-  const [api, setApi] = useState<any>()
-  const [current, setCurrent] = useState(0)
-  const [isPopupOpen, setIsPopupOpen] = useState(false)
-  const [selectedProperty, setSelectedProperty] = useState<{ title: string; location: string } | null>(null)
+  const [api, setApi] = useState<any>();
+  const [current, setCurrent] = useState(0);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedProperty, setSelectedProperty] = useState<{
+    title: string;
+    location: string;
+  } | null>(null);
 
   const handleNavigation = (path: string) => {
-    window.location.href = path
-  }
+    window.location.href = path;
+  };
 
   const handleContact = (property: any) => {
     setSelectedProperty({
       title: property.name,
-      location: property.address
-    })
-    setIsPopupOpen(true)
-  }
+      location: property.address,
+    });
+    setIsPopupOpen(true);
+  };
 
   useEffect(() => {
     if (!api) {
-      return
+      return;
     }
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap())
-    })
-  }, [api])
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
-    <section id="properties" className="pt-24 pb-20 bg-gradient-to-br from-background to-primary/5">
+    <section
+      id="properties"
+      className="pt-24 pb-20 bg-gradient-to-br from-background to-primary/5"
+    >
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+          <div className="inline-block px-4 py-2 bg-primary/15 text-primary border border-primary/20 rounded-full text-sm font-medium mb-4">
             Premium Projects
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-primary mb-4">
             Featured Luxury Properties
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our handpicked collection of premium real estate projects that redefine luxury living
+            Discover our handpicked collection of premium real estate projects
+            that redefine luxury living
           </p>
         </div>
 
@@ -114,8 +127,16 @@ export function PropertiesSection() {
           >
             <CarouselContent>
               {properties.map((property, index) => (
-                <CarouselItem key={property.id} className="md:basis-1/2 lg:basis-1/2">
-                  <div className="group cursor-pointer p-4" onClick={() => handleNavigation(`/properties/${property.id}`)}>
+                <CarouselItem
+                  key={property.id}
+                  className="md:basis-1/2 lg:basis-1/2"
+                >
+                  <div
+                    className="group cursor-pointer p-4"
+                    onClick={() =>
+                      handleNavigation(`/properties/${property.id}`)
+                    }
+                  >
                     <div className="relative overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 group-hover:scale-105">
                       {/* Image */}
                       <Image
@@ -128,24 +149,30 @@ export function PropertiesSection() {
                         quality={90}
                         loading="lazy"
                       />
-                      
+
                       {/* Darker Overlay for Better Text Visibility */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 rounded-2xl"></div>
-                      
+
                       {/* Status Badge */}
                       <div className="absolute top-4 left-4">
                         <span className="bg-secondary text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
                           {property.status}
                         </span>
                       </div>
-                      
+
                       {/* Text Overlay - Bottom Left */}
                       <div className="absolute bottom-4 left-4 right-4 text-white">
-                        <h3 className="text-2xl font-semibold mb-2 drop-shadow-lg">{property.name}</h3>
-                        <p className="text-base opacity-95 mb-2 drop-shadow-lg">{property.builder}</p>
+                        <h3 className="text-2xl font-semibold mb-2 drop-shadow-lg">
+                          {property.name}
+                        </h3>
+                        <p className="text-base opacity-95 mb-2 drop-shadow-lg">
+                          {property.builder}
+                        </p>
                         <div className="flex items-center gap-2 text-sm opacity-90">
                           <MapPin className="w-4 h-4" />
-                          <span className="drop-shadow-lg">{property.address}</span>
+                          <span className="drop-shadow-lg">
+                            {property.address}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -153,7 +180,7 @@ export function PropertiesSection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
+
             {/* Navigation Arrows - Left and Right Sides */}
             <div className="absolute -left-16 top-1/2 transform -translate-y-1/2">
               <CarouselPrevious className="relative translate-y-0 left-0 right-0 bg-white hover:bg-gray-50 border-2 border-primary text-primary hover:text-primary shadow-lg w-12 h-12" />
@@ -162,7 +189,7 @@ export function PropertiesSection() {
               <CarouselNext className="relative translate-y-0 left-0 right-0 bg-white hover:bg-gray/50 border-2 border-primary text-primary hover:text-primary shadow-lg w-12 h-12" />
             </div>
           </Carousel>
-          
+
           {/* Carousel Indicators */}
           <div className="flex justify-center mt-8 gap-2">
             {properties.map((_, index) => (
@@ -182,8 +209,8 @@ export function PropertiesSection() {
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-white px-8 py-4 text-lg rounded-full"
-              onClick={() => handleNavigation('/properties')}
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg rounded-full"
+              onClick={() => handleNavigation("/properties")}
             >
               Explore All Projects
             </Button>
@@ -203,12 +230,12 @@ export function PropertiesSection() {
       <ContactPopup
         isOpen={isPopupOpen}
         onClose={() => {
-          setIsPopupOpen(false)
-          setSelectedProperty(null)
+          setIsPopupOpen(false);
+          setSelectedProperty(null);
         }}
         propertyTitle={selectedProperty?.title}
         propertyLocation={selectedProperty?.location}
       />
     </section>
-  )
+  );
 }

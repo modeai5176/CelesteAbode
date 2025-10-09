@@ -1,14 +1,14 @@
-import { ReactNode } from "react"
-import { cn } from "@/lib/utils"
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface SectionProps {
-  children: ReactNode
-  className?: string
+  children: ReactNode;
+  className?: string;
   intro?: {
-    kicker?: string
-    title: string
-    lead?: string
-  }
+    kicker?: string;
+    title: string;
+    lead?: string;
+  };
 }
 
 export function Section({ children, className, intro }: SectionProps) {
@@ -18,7 +18,7 @@ export function Section({ children, className, intro }: SectionProps) {
         {intro && (
           <div className="text-center mb-12">
             {intro.kicker && (
-              <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-6">
+              <div className="inline-block px-4 py-2 bg-primary/15 text-primary border border-primary/20 rounded-full text-sm font-medium mb-6">
                 {intro.kicker}
               </div>
             )}
@@ -35,5 +35,5 @@ export function Section({ children, className, intro }: SectionProps) {
         {children}
       </div>
     </section>
-  )
+  );
 }

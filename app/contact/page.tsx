@@ -74,11 +74,11 @@ export default function ContactPage() {
         {/* Hero Section */}
         <section className="pt-0 pb-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="max-w-6xl mx-auto text-center pt-32">
-            <div className="inline-block px-4 py-2 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4">
+            <div className="inline-block px-4 py-2 bg-primary/15 text-primary border border-primary/20 rounded-full text-sm font-medium mb-4">
               Contact
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-              Get in <span className="text-secondary">Touch</span>
+              Get in <span className="text-primary">Touch</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Ready to start your journey towards finding your perfect property?

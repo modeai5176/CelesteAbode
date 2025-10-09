@@ -7,102 +7,102 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap'); /* EDIT: imported Montserrat Bold for headings */
 
-/* Sophisticated luxury color palette with elegant blues and neutral tones */
+/* Sophisticated luxury color palette with warm neutrals and gold accents */
 :root {
   /* Light background */
-  --background: #F9FAFB; /* Clean light-gray white */
-  --foreground: #1E293B; /* Slate blue-gray text */
-  --card: #FFFFFF; /* White card surface */
-  --card-foreground: #475569; /* Muted gray text on cards */
+  --background: #F8F5EF; /* Ivory / Cream Background */
+  --foreground: #2E2E2E; /* Dark Charcoal (Main Heading Text) */
+  --card: #FFFFFF; /* White (Header & Cards Background) */
+  --card-foreground: #5E5E5E; /* Warm Gray Text */
   --popover: #FFFFFF; /* Popover background */
-  --popover-foreground: #475569; /* Popover text */
+  --popover-foreground: #5E5E5E; /* Popover text */
 
   /* Primary / Accent */
-  --primary: #E3C67A; /* Champagne gold */
-  --primary-foreground: #1E293B; /* Text on gold elements */
-  --secondary: #CBD5E1; /* Soft gray-blue */
-  --secondary-foreground: #1E293B; /* Text on secondary accents */
-  --accent: #E3C67A; /* Accent / hover elements */
-  --accent-foreground: #1E293B;
+  --primary: #D4B16A; /* Gold Highlight (Buttons & Links) */
+  --primary-foreground: #FFFFFF; /* Text on gold elements */
+  --secondary: #EDE3D7; /* Soft Beige Accent */
+  --secondary-foreground: #2E2E2E; /* Text on secondary accents */
+  --accent: #D4B16A; /* Accent / hover elements */
+  --accent-foreground: #FFFFFF;
 
   /* Muted / Neutral */
-  --muted: #F0F4F8; /* Light subtle sections */
-  --muted-foreground: #475569; /* Text on muted areas */
-  --neutral-blue: #F9FAFB; /* Neutral background */
-  --neutral-blue-foreground: #1E293B;
+  --muted: #EDE3D7; /* Soft Beige Accent */
+  --muted-foreground: #5E5E5E; /* Warm Gray Text */
+  --neutral-blue: #F8F5EF; /* Ivory / Cream Background */
+  --neutral-blue-foreground: #2E2E2E;
 
   /* Utility colors */
   --destructive: #C94B4B; /* Error / warning red */
   --destructive-foreground: #FFFFFF; /* Text on red alerts */
-  --border: #CBD5E1; /* Soft gray-blue borders */
+  --border: #EDE3D7; /* Soft Beige borders */
   --input: #FFFFFF; /* Input backgrounds */
-  --ring: rgba(227,198,122,0.25); /* Semi-transparent gold focus ring */
+  --ring: rgba(212,177,106,0.25); /* Semi-transparent gold focus ring */
 
   /* Chart colors */
-  --chart-1: #E3C67A; /* Champagne gold */
-  --chart-2: #CBD5E1; /* Soft gray-blue */
-  --chart-3: #94A3B8; /* Cool mid-gray */
-  --chart-4: #475569; /* Slate blue-gray */
-  --chart-5: #1E293B; /* Deep slate for contrast */
+  --chart-1: #D4B16A; /* Gold Highlight */
+  --chart-2: #EDE3D7; /* Soft Beige Accent */
+  --chart-3: #5E5E5E; /* Warm Gray Text */
+  --chart-4: #2E2E2E; /* Dark Charcoal */
+  --chart-5: #F8F5EF; /* Ivory / Cream */
 
   --radius: 0.5rem;
 
   /* Sidebar */
-  --sidebar: #FFFFFF; /* Sidebar background */
-  --sidebar-foreground: #1E293B; /* Sidebar text */
-  --sidebar-primary: #F9FAFB; /* Primary sidebar background */
-  --sidebar-primary-foreground: #E3C67A; /* Gold highlight */
-  --sidebar-accent: #E3C67A; /* Accent items */
-  --sidebar-accent-foreground: #1E293B; /* Text on accent */
-  --sidebar-border: #CBD5E1; /* Sidebar border */
-  --sidebar-ring: rgba(227,198,122,0.18); /* Focus ring */
+  --sidebar: #FFFFFF; /* White sidebar background */
+  --sidebar-foreground: #2E2E2E; /* Dark Charcoal sidebar text */
+  --sidebar-primary: #F8F5EF; /* Ivory / Cream primary sidebar background */
+  --sidebar-primary-foreground: #D4B16A; /* Gold highlight */
+  --sidebar-accent: #D4B16A; /* Accent items */
+  --sidebar-accent-foreground: #FFFFFF; /* Text on accent */
+  --sidebar-border: #EDE3D7; /* Soft Beige border */
+  --sidebar-ring: rgba(212,177,106,0.18); /* Focus ring */
 
   /* Link color */
-  --link-text: #1E293B; /* Dark blue-gray links */
+  --link-text: #2E2E2E; /* Dark Charcoal links */
 }
 
 
-/* EDIT: Replaced .dark variables with deeper/richer variants of the palette */
+/* Dark mode with warm dark variants of the new palette */
 .dark {
-  /* Deeper, richer dark variants tuned to the new palette */
-  --background: #050505; /* almost-black for deeper mode */
-  --foreground: #F5F5F5;
-  --card: #0A0A0A; /* match base velvet black */
-  --card-foreground: #F5F5F5;
-  --popover: #0A0A0A;
-  --popover-foreground: #F5F5F5;
+  /* Dark variants using warm dark tones */
+  --background: #1A1A1A; /* Warm dark background */
+  --foreground: #F8F5EF; /* Ivory text on dark */
+  --card: #2A2A2A; /* Warm dark card */
+  --card-foreground: #F8F5EF;
+  --popover: #2A2A2A;
+  --popover-foreground: #F8F5EF;
 
-  --primary: #C9B36B; /* slightly darker champagne gold */
-  --primary-foreground: #050505;
-  --secondary: #BDA55F;
-  --secondary-foreground: #050505;
-  --muted: #080808;
-  --muted-foreground: rgba(245,245,245,0.72);
-  --accent: #C9B36B;
-  --accent-foreground: #050505;
-  --neutral-blue: #0A0A0A;
-  --neutral-blue-foreground: #F5F5F5;
+  --primary: #D4B16A; /* Same gold highlight */
+  --primary-foreground: #1A1A1A; /* Dark text on gold */
+  --secondary: #3A3A3A; /* Darker warm gray */
+  --secondary-foreground: #F8F5EF;
+  --muted: #2A2A2A; /* Warm dark muted */
+  --muted-foreground: rgba(248,245,239,0.72);
+  --accent: #D4B16A; /* Same gold accent */
+  --accent-foreground: #1A1A1A;
+  --neutral-blue: #1A1A1A;
+  --neutral-blue-foreground: #F8F5EF;
 
   --destructive: #a33f3f;
   --destructive-foreground: #FFFFFF;
-  --border: #0F0F0F; /* darker border */
-  --input: #0A0A0A;
-  --ring: rgba(227,198,122,0.32);
+  --border: #3A3A3A; /* Warm dark border */
+  --input: #2A2A2A;
+  --ring: rgba(212,177,106,0.32);
 
-  --chart-1: #C9B36B;
-  --chart-2: #BDA55F;
-  --chart-3: #8f7a40;
-  --chart-4: #6f5b33;
-  --chart-5: #4f3f24;
+  --chart-1: #D4B16A; /* Gold */
+  --chart-2: #EDE3D7; /* Soft Beige */
+  --chart-3: #5E5E5E; /* Warm Gray */
+  --chart-4: #2E2E2E; /* Dark Charcoal */
+  --chart-5: #F8F5EF; /* Ivory */
 
-  --sidebar: #050505;
-  --sidebar-foreground: #F5F5F5;
-  --sidebar-primary: #0A0A0A;
-  --sidebar-primary-foreground: #C9B36B;
-  --sidebar-accent: #C9B36B;
-  --sidebar-accent-foreground: #050505;
-  --sidebar-border: #0F0F0F;
-  --sidebar-ring: rgba(227,198,122,0.28);
+  --sidebar: #1A1A1A;
+  --sidebar-foreground: #F8F5EF;
+  --sidebar-primary: #2A2A2A;
+  --sidebar-primary-foreground: #D4B16A;
+  --sidebar-accent: #D4B16A;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #3A3A3A;
+  --sidebar-ring: rgba(212,177,106,0.28);
 }
 
 @theme inline {
