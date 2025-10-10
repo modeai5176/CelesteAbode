@@ -94,6 +94,15 @@ export function Header() {
                 ? "text-white"
                 : "text-primary"
             }`}
+            style={{
+              color: isMobile
+                ? "#D4B16A"
+                : isHomepage && isScrolled
+                ? "#D4B16A"
+                : isHomepage
+                ? "white"
+                : "#D4B16A",
+            }}
           >
             Celeste Abode
           </span>

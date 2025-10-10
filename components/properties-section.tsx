@@ -214,14 +214,12 @@ export function PropertiesSection() {
             >
               Explore All Projects
             </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 text-lg rounded-full"
+            <button
+              className="dark-accent-button"
               onClick={() => handleContact(properties[0])}
             >
               Get Expert Consultation
-            </Button>
+            </button>
           </div>
         </div>
       </div>

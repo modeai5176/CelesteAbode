@@ -17,47 +17,47 @@
   --popover-foreground: #5E5E5E; /* Popover text */
 
   /* Primary / Accent */
-  --primary: #D4B16A; /* Gold Highlight (Buttons & Links) */
-  --primary-foreground: #FFFFFF; /* Text on gold elements */
-  --secondary: #EDE3D7; /* Soft Beige Accent */
-  --secondary-foreground: #2E2E2E; /* Text on secondary accents */
-  --accent: #D4B16A; /* Accent / hover elements */
+  --primary: #8DC2B4; /* Light green-blue accent from image */
+  --primary-foreground: #FFFFFF; /* Text on green elements */
+  --secondary: #F5F7FA; /* Light gray-blue background */
+  --secondary-foreground: #1E293B; /* Text on secondary accents */
+  --accent: #8DC2B4; /* Accent / hover elements */
   --accent-foreground: #FFFFFF;
 
   /* Muted / Neutral */
-  --muted: #EDE3D7; /* Soft Beige Accent */
-  --muted-foreground: #5E5E5E; /* Warm Gray Text */
-  --neutral-blue: #F8F5EF; /* Ivory / Cream Background */
-  --neutral-blue-foreground: #2E2E2E;
+  --muted: #F5F7FA; /* Light gray-blue background */
+  --muted-foreground: #64748B; /* Muted gray text */
+  --neutral-blue: #F5F7FA; /* Light gray-blue background */
+  --neutral-blue-foreground: #1E293B;
 
   /* Utility colors */
-  --destructive: #C94B4B; /* Error / warning red */
+  --destructive: #EF4444; /* Error / warning red */
   --destructive-foreground: #FFFFFF; /* Text on red alerts */
-  --border: #EDE3D7; /* Soft Beige borders */
+  --border: #E2E8F0; /* Light gray borders */
   --input: #FFFFFF; /* Input backgrounds */
-  --ring: rgba(212,177,106,0.25); /* Semi-transparent gold focus ring */
+  --ring: rgba(141,194,180,0.25); /* Semi-transparent green focus ring */
 
   /* Chart colors */
-  --chart-1: #D4B16A; /* Gold Highlight */
-  --chart-2: #EDE3D7; /* Soft Beige Accent */
-  --chart-3: #5E5E5E; /* Warm Gray Text */
-  --chart-4: #2E2E2E; /* Dark Charcoal */
-  --chart-5: #F8F5EF; /* Ivory / Cream */
+  --chart-1: #8DC2B4; /* Green-blue accent */
+  --chart-2: #F5F7FA; /* Light gray-blue */
+  --chart-3: #64748B; /* Muted gray */
+  --chart-4: #1E293B; /* Dark slate */
+  --chart-5: #FFFFFF; /* White */
 
   --radius: 0.5rem;
 
   /* Sidebar */
   --sidebar: #FFFFFF; /* White sidebar background */
-  --sidebar-foreground: #2E2E2E; /* Dark Charcoal sidebar text */
-  --sidebar-primary: #F8F5EF; /* Ivory / Cream primary sidebar background */
-  --sidebar-primary-foreground: #D4B16A; /* Gold highlight */
-  --sidebar-accent: #D4B16A; /* Accent items */
+  --sidebar-foreground: #1E293B; /* Dark slate sidebar text */
+  --sidebar-primary: #F5F7FA; /* Light gray-blue primary sidebar background */
+  --sidebar-primary-foreground: #8DC2B4; /* Green-blue highlight */
+  --sidebar-accent: #8DC2B4; /* Accent items */
   --sidebar-accent-foreground: #FFFFFF; /* Text on accent */
-  --sidebar-border: #EDE3D7; /* Soft Beige border */
-  --sidebar-ring: rgba(212,177,106,0.18); /* Focus ring */
+  --sidebar-border: #E2E8F0; /* Light gray border */
+  --sidebar-ring: rgba(141,194,180,0.18); /* Focus ring */
 
   /* Link color */
-  --link-text: #2E2E2E; /* Dark Charcoal links */
+  --link-text: #8DC2B4; /* Green-blue links */
 }
 
 
@@ -71,14 +71,14 @@
   --popover: #2A2A2A;
   --popover-foreground: #F8F5EF;
 
-  --primary: #D4B16A; /* Same gold highlight */
-  --primary-foreground: #1A1A1A; /* Dark text on gold */
-  --secondary: #3A3A3A; /* Darker warm gray */
-  --secondary-foreground: #F8F5EF;
-  --muted: #2A2A2A; /* Warm dark muted */
-  --muted-foreground: rgba(248,245,239,0.72);
-  --accent: #D4B16A; /* Same gold accent */
-  --accent-foreground: #1A1A1A;
+  --primary: #8DC2B4; /* Same green-blue highlight */
+  --primary-foreground: #0F172A; /* Dark text on green */
+  --secondary: #334155; /* Darker slate */
+  --secondary-foreground: #F8FAFC;
+  --muted: #1E293B; /* Dark muted */
+  --muted-foreground: rgba(248,250,252,0.72);
+  --accent: #8DC2B4; /* Same green-blue accent */
+  --accent-foreground: #0F172A;
   --neutral-blue: #1A1A1A;
   --neutral-blue-foreground: #F8F5EF;
 
@@ -88,20 +88,20 @@
   --input: #2A2A2A;
   --ring: rgba(212,177,106,0.32);
 
-  --chart-1: #D4B16A; /* Gold */
-  --chart-2: #EDE3D7; /* Soft Beige */
-  --chart-3: #5E5E5E; /* Warm Gray */
-  --chart-4: #2E2E2E; /* Dark Charcoal */
-  --chart-5: #F8F5EF; /* Ivory */
+  --chart-1: #8DC2B4; /* Green-blue */
+  --chart-2: #F5F7FA; /* Light gray-blue */
+  --chart-3: #64748B; /* Muted gray */
+  --chart-4: #1E293B; /* Dark slate */
+  --chart-5: #FFFFFF; /* White */
 
   --sidebar: #1A1A1A;
   --sidebar-foreground: #F8F5EF;
   --sidebar-primary: #2A2A2A;
-  --sidebar-primary-foreground: #D4B16A;
-  --sidebar-accent: #D4B16A;
-  --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: #3A3A3A;
-  --sidebar-ring: rgba(212,177,106,0.28);
+  --sidebar-primary-foreground: #8DC2B4;
+  --sidebar-accent: #8DC2B4;
+  --sidebar-accent-foreground: #0F172A;
+  --sidebar-border: #334155;
+  --sidebar-ring: rgba(141,194,180,0.28);
 }
 
 @theme inline {
@@ -282,7 +282,7 @@
 }
 
 .gradient-overlay {
-  background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 58, 138, 0.7) 100%);
+  background: linear-gradient(135deg, rgba(141, 194, 180, 0.9) 0%, rgba(141, 194, 180, 0.7) 100%);
 }
 
 /* Added scroll animations and premium effects */
@@ -344,6 +344,32 @@
 
 .accent-button {
   @apply bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+/* Dark accent button style - modern aesthetic */
+.dark-accent-button {
+  background-color: #1E293B; /* Dark slate background */
+  color: #8DC2B4; /* Green-blue text */
+  border: 1px solid #8DC2B4; /* Green-blue border */
+  padding: 0.75rem 2rem;
+  border-radius: 2rem; /* Pill shape */
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.dark-accent-button:hover {
+  background-color: #8DC2B4; /* Green-blue background on hover */
+  color: #1E293B; /* Dark text on hover */
+  border-color: #8DC2B4;
+  box-shadow: 0 4px 8px rgba(141, 194, 180, 0.2);
+  transform: translateY(-1px);
 }
 
 /* Aesthetic helpers: subtle overlays and refined shadows to add an elegant vibe */

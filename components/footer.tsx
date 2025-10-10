@@ -200,10 +200,8 @@ export function Footer() {
         {/* EDIT: adjusted top border to use border-border/40 to better suit the new footer background */}
         <div className="border-t border-white/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-primary">
-              {" "}
-              {/* EDIT: copyright text changed to primary (yellow) */}© 2024
-              Celeste Abode Private Limited. All rights reserved.
+            <div className="text-sm" style={{ color: "#D4B16A" }}>
+              © 2024 Celeste Abode Private Limited. All rights reserved.
             </div>
             <div className="flex gap-6 text-sm">
               <Link

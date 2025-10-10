@@ -96,14 +96,9 @@ export function HeroSection() {
           >
             <a href="/properties">Explore Properties</a>
           </PillButton>
-          <PillButton
-            variant="outline"
-            size="lg"
-            className="border-white text-white hover:bg-white hover:text-primary sm:text-base sm:px-8 sm:py-4 text-sm px-4 py-2"
-            asChild
-          >
-            <a href="/contact">Book Consultation</a>
-          </PillButton>
+          <a href="/contact" className="dark-accent-button">
+            Book Consultation
+          </a>
         </div>
       </motion.div>
 

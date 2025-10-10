@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { Section } from "@/components/ui/section"
-import { ImageFigure } from "@/components/ui/image-figure"
-import { PillButton } from "@/components/ui/pill-button"
-import { Kicker } from "@/components/ui/kicker"
-import { Lead } from "@/components/ui/lead"
-import Link from "next/link"
+import { Section } from "@/components/ui/section";
+import { ImageFigure } from "@/components/ui/image-figure";
+import { PillButton } from "@/components/ui/pill-button";
+import { Kicker } from "@/components/ui/kicker";
+import { Lead } from "@/components/ui/lead";
+import Link from "next/link";
 
 export function BrandEssay() {
   return (
@@ -13,7 +13,10 @@ export function BrandEssay() {
       <div className="lg:grid lg:grid-cols-12 gap-8 md:gap-16">
         {/* Left Column - Media (Sticky on Desktop) */}
         <div className="lg:col-span-5">
-          <div className="lg:sticky lg:top-32 flex justify-center" style={{ height: 'fit-content' }}>
+          <div
+            className="lg:sticky lg:top-32 flex justify-center"
+            style={{ height: "fit-content" }}
+          >
             <div className="relative overflow-hidden rounded-xl md:rounded-2xl shadow-xl md:shadow-2xl">
               <ImageFigure
                 src="/modern-luxury-apartment-building-architectural-pho.png"
@@ -36,17 +39,23 @@ export function BrandEssay() {
               Celeste Abode
             </h2>
             <Lead>
-              We are a premium real estate consulting firm that specializes in curating and presenting the finest luxury real estate projects that redefine modern living.
+              We are a premium real estate consulting firm that specializes in
+              curating and presenting the finest luxury real estate projects
+              that redefine modern living.
             </Lead>
           </div>
-          
+
           {/* Copy Structure */}
           <div className="max-w-prose vertical-rhythm">
             {/* Curated Portfolio */}
             <div>
               <h4 className="h4 text-foreground mb-3">Curated Portfolio</h4>
               <p className="body-text text-muted-foreground">
-                Our portfolio features handpicked developments from renowned developers, each offering unique value propositions and exceptional investment opportunities. We believe in complete transparency in all our dealings, with every project thoroughly vetted and all legal compliances clearly communicated.
+                Our portfolio features handpicked developments from renowned
+                developers, each offering unique value propositions and
+                exceptional investment opportunities. We believe in complete
+                transparency in all our dealings, with every project thoroughly
+                vetted and all legal compliances clearly communicated.
               </p>
             </div>
 
@@ -54,7 +63,11 @@ export function BrandEssay() {
             <div>
               <h4 className="h4 text-foreground mb-3">Transparent Process</h4>
               <p className="body-text text-muted-foreground">
-                We provide exclusive access to premium projects before public launch, comprehensive project analysis and investment guidance, and end-to-end support from selection to possession. Our trusted partnerships with leading developers ensure you get the best opportunities in the market.
+                We provide exclusive access to premium projects before public
+                launch, comprehensive project analysis and investment guidance,
+                and end-to-end support from selection to possession. Our trusted
+                partnerships with leading developers ensure you get the best
+                opportunities in the market.
               </p>
             </div>
 
@@ -66,7 +79,10 @@ export function BrandEssay() {
             {/* Closing Statement */}
             <div>
               <p className="body-text text-muted-foreground">
-                At Celeste Abode, we don't just sell properties; we curate lifestyles. Our personalized approach ensures that every client finds not just a home, but a perfect match for their aspirations, values, and future vision.
+                At Celeste Abode, we don't just sell properties; we curate
+                lifestyles. Our personalized approach ensures that every client
+                finds not just a home, but a perfect match for their
+                aspirations, values, and future vision.
               </p>
             </div>
           </div>
@@ -82,29 +98,25 @@ export function BrandEssay() {
 
           {/* CTA Row */}
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <PillButton 
-              variant="primary"
-              size="md"
-              asChild
-            >
-              <Link href="/philosophy" aria-label="Explore our philosophy and values">
+            <PillButton variant="primary" size="md" asChild>
+              <Link
+                href="/philosophy"
+                aria-label="Explore our philosophy and values"
+              >
                 Explore Our Philosophy
               </Link>
             </PillButton>
-            
-            <PillButton 
-              variant="outline"
-              size="md"
-              asChild
+
+            <Link
+              href="/services"
+              aria-label="View our comprehensive services"
+              className="dark-accent-button"
             >
-              <Link href="/services" aria-label="View our comprehensive services">
-                View Services
-              </Link>
-            </PillButton>
+              View Services
+            </Link>
           </div>
-          
         </div>
       </div>
     </Section>
-  )
+  );
 }
